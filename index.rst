@@ -14,6 +14,12 @@ NVIDIA Container Toolkit
    toolkit/platform.rst
    toolkit/faq.rst
 
+NVIDIA GPU Operator
+-------------------
+.. toctree::
+   :maxdepth: 1
+
+   gpu-operator/testing.rst
 
 Indices and tables
 ------------------

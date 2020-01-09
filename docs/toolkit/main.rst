@@ -1,3 +1,0 @@
-NVIDIA Container Toolkit
-========================
-

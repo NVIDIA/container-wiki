@@ -4,7 +4,7 @@ Setting up
 Which Docker packages are supported?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  All stable releases of ```docker-ce```_ installed from
+-  All stable releases of `docker-ce`_ installed from
    https://docs.docker.com/install/ starting from docker 19.03
 -  The package provided by Canonical: ``docker.io`` starting from docker
    19.03.
@@ -25,7 +25,7 @@ How do I install the NVIDIA driver?
 | The recommended way is to use your `package manager`_ and install the
   ``cuda-drivers`` package (or equivalent).
 | When no packages are available, you should use an official
-  `“runfile”`_.
+  `runfile`_.
 
 | Alternatively, and as a technology preview, the NVIDIA driver can be
   deployed through a container.
@@ -80,9 +80,9 @@ What distributions are officially supported?
   available `here`_.
 | For your container
 
-.. _``docker-ce``: https://docs.docker.com/release-notes/docker-ce/
+.. _docker-ce: https://docs.docker.com/release-notes/docker-ce/
 .. _package manager: http://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#package-manager-installation
-.. _“runfile”: http://www.nvidia.com/object/unix.html
+.. _runfile: http://www.nvidia.com/object/unix.html
 .. _documentation: https://github.com/NVIDIA/nvidia-docker/wiki/Driver-containers-(EXPERIMENTAL)
 .. _repository instructions: https://nvidia.github.io/nvidia-docker/
 .. _this link: https://github.com/NVIDIA/nvidia-docker/wiki/NVIDIA-Container-Runtime-on-Jetson

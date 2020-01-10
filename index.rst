@@ -3,21 +3,19 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-NVIDIA Container Products Wiki
-==============================
+NVIDIA Cloud Native Products
+============================
 
-NVIDIA Container Toolkit
-------------------------
 .. toctree::
    :maxdepth: 1
+   :caption: NVIDIA Container Toolkit
 
    toolkit/platform.rst
    toolkit/faq.rst
 
-NVIDIA GPU Operator
--------------------
 .. toctree::
    :maxdepth: 1
+   :caption: NVIDIA GPU Operator
 
    gpu-operator/testing.rst
 

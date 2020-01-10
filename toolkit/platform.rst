@@ -1,95 +1,109 @@
 Platform support Information
 ============================
 
-Which Docker packages are supported?
-------------------------------------
+.. contents:: Table of Contents
+   :local:
 
-* All stable releases of `docker-ce <https://docs.docker.com/release-notes/docker-ce/>`_ installed from https://docs.docker.com/install/ starting from docker 19.03
-* The package provided by Canonical: ``docker.io`` starting from docker 19.03.
-* The package provided by Red Hat: ``docker`` starting from docker 19.03.
+Linux Distribution Matrix
+-------------------------
 
-Note that Edge, Test and Nightly releases are not officially supported
-but we will provide best effort support.
+The following table describes the Linux Distribution matrix of the ``nvidia-container-toolkit`` package.
 
-What is the minimum supported Docker version?
----------------------------------------------
++----------------+-------------------------+--------+---------+
+|  Distribution  |      Support Status     | x86_64 | ppc64le |
++================+=========================+========+=========+
+| Ubuntu 14.04   |  Not Supported anymore  |   N/A  |   No    |
++----------------+-------------------------+--------+---------+
+| Debian 8       |  Not Supported anymore  |   N/A  |   No    |
++----------------+-------------------------+--------+---------+
+| Ubuntu 19.04   |        Best Effort      |   Yes  |   Yes   |
++----------------+-------------------------+--------+---------+
+| Ubuntu 19.10   |        Best Effort      |   Yes  |   Yes   |
++----------------+-------------------------+--------+---------+
+| Ubuntu 16.04   |            Yes          |   Yes  |   Yes   |
++----------------+-------------------------+--------+---------+
+| Ubuntu 18.04   |            Yes          |   Yes  |   Yes   |
++----------------+-------------------------+--------+---------+
+| Debian 9       |            Yes          |   Yes  |   No    |
++----------------+-------------------------+--------+---------+
+| Debian 10      |            Yes          |   Yes  |   No    |
++----------------+-------------------------+--------+---------+
+| Amazon Linux 1 |            Yes          |   Yes  |   No    |
++----------------+-------------------------+--------+---------+
+| Amazon Linux 2 |            Yes          |   Yes  |   No    |
++----------------+-------------------------+--------+---------+
+| Centos 7.X     |            Yes          |   Yes  |   Yes   |
++----------------+-------------------------+--------+---------+
+| Centos 8.X     |            Yes          |   Yes  |   Yes   |
++----------------+-------------------------+--------+---------+
+| RHEL 7.X       |            Yes          |   Yes  |   Yes   |
++----------------+-------------------------+--------+---------+
+| RHEL 8.X       |            Yes          |   Yes  |   Yes   |
++----------------+-------------------------+--------+---------+
+| SLES 15.X      |            Yes          |   Yes  |   No    |
++----------------+-------------------------+--------+---------+
+| Opensuse 15.X  |            Yes          |   Yes  |   No    |
++----------------+-------------------------+--------+---------+
 
-For the container toolkit: Docker 19.03 which adds support for the ``--gpus`` option.
-For the container runtime: Docker 18.06.
+Additional Support Information
+------------------------------
 
-What Linux Distributions are the packages supported on?
--------------------------------------------------------
+Do you support the nvidia-docker2 package?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+----------------+-------------------------+------+
-|  Distribution  |   Support Status        |  EOL |
-+================+=========================+======+
-| Ubuntu 14.04   |  Not Supported anymore  |  Yes |
-+----------------+-------------------------+------+
-| Debian 8       |  Not Supported anymore  |  Yes |
-+----------------+-------------------------+------+
-| Ubuntu 16.04   |            Yes          |  No  |
-+----------------+-------------------------+------+
-| Ubuntu 18.04   |            Yes          |  No  |
-+----------------+-------------------------+------+
-| Ubuntu 19.04   |        Best Effort      |  No  |
-+----------------+-------------------------+------+
-| Ubuntu 19.10   |        Best Effort      |  No  |
-+----------------+-------------------------+------+
-| Debian 9       |            Yes          |  No  |
-+----------------+-------------------------+------+
-| Debian 10      |            Yes          |  No  |
-+----------------+-------------------------+------+
-| Amazon Linux 1 |            Yes          |  No  |
-+----------------+-------------------------+------+
-| Amazon Linux 2 |            Yes          |  No  |
-+----------------+-------------------------+------+
-| Centos 7.X     |            Yes          |  No  |
-+----------------+-------------------------+------+
-| Centos 8.X     |            Yes          |  No  |
-+----------------+-------------------------+------+
-| RHEL 7.X       |            Yes          |  No  |
-+----------------+-------------------------+------+
-| RHEL 8.X       |            Yes          |  No  |
-+----------------+-------------------------+------+
-| SLES 15.X      |            Yes          |  No  |
-+----------------+-------------------------+------+
-| Opensuse 15.X  |            Yes          |  No  |
-+----------------+-------------------------+------+
+In the context of the docker CLI, this package is no longer supported and can be considered deprecated.
 
+However in the context of Kubernetes or Docker swarm, these orchestrators still rely on the old ``nvidia-docker2`` package. Until this is solved in both orchestrators, the packages will continue to be maintained and we will continue to provide support to issues that user face.
+
+Do you support the Docker docker-ce packages?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+All stable releases of the ``docker-ce`` package, installed from https://docs.docker.com/install/ and starting from docker 19.03, are supported with the ``nvidia-container-toolkit`` package.
+
+All stable releases of the ``docker-ce`` package, installed from https://docs.docker.com/install/ and starting from docker 18.06 are supported with the ``nvidia-docker2`` package.
+
+*Note that Edge, Test and Nightly releases are not officially supported but we will provide best effort support.*
+
+Do you support the Canonical docker.io packages?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+All stable releases of the ``docker.io`` package, provided by Canonical and starting from docker 19.03, are supported with the ``nvidia-container-toolkit`` package.
+
+All stable releases of the ``docker.io`` package, provided by Canonical and starting from docker 18.06, are supported with the ``nvidia-docker2`` package.
+
+Do you support the Red Hat docker packages?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+All stable releases of the ``docker`` package, provided by Red Hat and starting from docker 18.06, are supported with the ``nvidia-container-toolkit`` package.
+
+*Note that Red Hat doesn't provide updates for this package and at the time of writing, no 19.03 package were available.*
 
 Do you support Jetson platforms (AArch64)?
-------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yes - beta support of the NVIDIA Container Runtime is now available on Jetson platforms (AGX, TX2 and Nano). See `this link <https://github.com/NVIDIA/nvidia-docker/wiki/NVIDIA-Container-Runtime-on-Jetson>`_ for more information on getting started.
 
 Do you support macOS?
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 No, we do not support macOS (regardless of the version), however you can use the native macOS Docker client to deploy your containers remotely (refer to the `dockerd documentation <https://docs.docker.com/engine/reference/commandline/dockerd/#description>`_\ ).
 
 Do you support Microsoft Windows?
----------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 No, we do not support Microsoft Windows (regardless of the version), however you can use the native Microsoft Windows Docker client to deploy your containers remotely (refer to the `dockerd documentation <https://docs.docker.com/engine/reference/commandline/dockerd/#description>`_\ ).
 
 Do you support Microsoft native container technologies (e.g. Windows server, Hyper-v)?
---------------------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 No, we do not support native Microsoft container technologies.
 
 Do you support Optimus (i.e. NVIDIA dGPU + Intel iGPU)?
--------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yes, from the CUDA perspective there is no difference as long as your dGPU is powered-on and you are following the official driver instructions.
 
-What distributions are officially supported?
---------------------------------------------
-
-For your host distribution, the list of supported platforms is available `here <http://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#system-requirements>`_.\
-For your container images, both the `Docker Hub <https://github.com/NVIDIA/nvidia-docker/wiki/Docker-Hub>`_ and `NGC registry <https://github.com/NVIDIA/nvidia-docker/wiki/NGC>`_ images are officially supported.
-
 Do you support PowerPC64 (ppc64le)?
------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yes, little-endian only.
-

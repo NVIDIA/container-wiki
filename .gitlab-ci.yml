@@ -3,5 +3,6 @@ image: python:3.7-alpine
 test:
   stage: test
   script:
+  - apk add make
   - pip install -U sphinx sphinx-rtd-theme
   - make html

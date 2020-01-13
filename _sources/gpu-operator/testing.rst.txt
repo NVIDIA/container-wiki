@@ -1,5 +1,5 @@
 Quality Assurance
-===============
+=================
 
 Setups that are tested
 ----------------------

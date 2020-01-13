@@ -121,7 +121,7 @@ Yes        Yes          Yes
 No         Yes          No
 Yes        No           No
 No         No           No
-=========  ============ ==============
+=========  ============ ===============
 
 Why is my container slow to start?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -209,7 +209,7 @@ Ecosystem enablement
 Do you support Docker Swarm mode?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Not currently, support for Swarmkit is still being worked on in the upstream Moby project. You can track our progress `here <https://github.com/moby/moby/issues/33439>`_.
+Not currently, support for Swarmkit is still being worked on in the upstream Moby project. You can track our progress `on gitub here <https://github.com/moby/moby/issues/33439>`_.
 
 Do you support Docker Compose?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -65,14 +65,14 @@ All stable releases of the ``docker-ce`` package, installed from https://docs.do
 *Note that Edge, Test and Nightly releases are not officially supported but we will provide best effort support.*
 
 Do you support the Canonical docker.io packages?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 All stable releases of the ``docker.io`` package, provided by Canonical and starting from docker 19.03, are supported with the ``nvidia-container-toolkit`` package.
 
 All stable releases of the ``docker.io`` package, provided by Canonical and starting from docker 18.06, are supported with the ``nvidia-docker2`` package.
 
 Do you support the Red Hat docker packages?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 All stable releases of the ``docker`` package, provided by Red Hat and starting from docker 18.06, are supported with the ``nvidia-container-toolkit`` package.
 

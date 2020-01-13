@@ -1,10 +1,17 @@
 language: python - "3.8"
 
 install:
-    - pip install travis-sphinx
+    - pip install sphinx sphinx-rtd-theme
 
 script:
-    - travis-sphinx build
+    - make html
 
-after_success:
-    - travis-sphinx deploy
+deploy:
+  provider: pages:git
+  github_token: $GITHUB_TOKEN
+  edge: true
+  keep_history: true
+  local_dir: _build/html
+  on:
+    branch: master
+

@@ -5,6 +5,7 @@ install:
 
 script:
     - make html
+    - touch _build/html/.nojekyll
 
 deploy:
   provider: pages:git

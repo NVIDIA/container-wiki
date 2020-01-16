@@ -16,8 +16,10 @@ This wiki provides tutorials on how to use these tools, references on the archit
 
    toolkit/quickstart.rst
    toolkit/container-images.rst
-   toolkit/platform.rst
+   toolkit/jetson.rst
+   toolkit/advanced-usage.rst
    toolkit/faq.rst
+   toolkit/platform.rst
    toolkit/deprecated.rst
 
 .. toctree::
@@ -25,10 +27,3 @@ This wiki provides tutorials on how to use these tools, references on the archit
    :caption: NVIDIA GPU Operator
 
    gpu-operator/testing.rst
-
-Indices and tables
-------------------
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

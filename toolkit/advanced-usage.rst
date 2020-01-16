@@ -22,7 +22,7 @@ Existing ``daemon.json``
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you have a custom ``/etc/docker/daemon.json``, the ``nvidia-docker2`` package will override it.
-In this case, it is recommended to install `nvidia-container-runtime <https://github.com/nvidia/nvidia-container-runtime#installation>`_ instead and register the new runtime manually.
+In this case, it is recommended to install `nvidia-container-runtime <https://github.com/nvidia/nvidia-container-runtime#installation>`__ instead and register the new runtime manually.
 
 Default runtime
 ~~~~~~~~~~~~~~~
@@ -38,7 +38,7 @@ Environment variables
 ~~~~~~~~~~~~~~~~~~~~~
 
 The behavior of the runtime can be modified through environment variables (such as ``NVIDIA_VISIBLE_DEVICES``).
-Those environment variables are consumed by `nvidia-container-runtime <https://github.com/nvidia/nvidia-container-runtime>`_ and are documented `here <https://github.com/nvidia/nvidia-container-runtime#environment-variables-oci-spec>`_.
+Those environment variables are consumed by `nvidia-container-runtime <https://github.com/nvidia/nvidia-container-runtime>`__ and are documented `here <https://github.com/nvidia/nvidia-container-runtime#environment-variables-oci-spec>`_.
 Our official CUDA images use default values for these variables.
 
 Intenals

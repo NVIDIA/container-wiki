@@ -1,8 +1,12 @@
+:tocdepth: 2
+
 Platform support Information
 ============================
 
 .. contents:: Table of Contents
    :local:
+
+.. _linux-distribution-matrix:
 
 Linux Distribution Matrix
 -------------------------

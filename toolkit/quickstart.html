@@ -1,0 +1,330 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Quickstart &mdash; Cloud Native Products  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Container images" href="container-images.html" />
+    <link rel="prev" title="NVIDIA Cloud Native Products" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Cloud Native Products
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">NVIDIA Container Toolkit</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-docker">What is Docker?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#benefits-of-gpu-containerization">Benefits of GPU containerization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#background-of-the-nvidia-container-toolkit">Background of the NVIDIA Container Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites-of-the-nvidia-container-toolkit">Prerequisites of the NVIDIA Container Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-of-the-nvidia-container-toolkit">Installation of the NVIDIA Container Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage-of-the-nvidia-container-toolkit">Usage of the NVIDIA Container Toolkit</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="container-images.html">Container images</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="container-images.html#using-cuda-images">Using CUDA images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="container-images.html#using-ngc-images">Using NGC images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="container-images.html#using-non-cuda-images">Using non-CUDA images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="container-images.html#writing-dockerfiles">Writing Dockerfiles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="platform.html">Platform support Information</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="platform.html#linux-distribution-matrix">Linux Distribution Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="platform.html#additional-support-information">Additional Support Information</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#general-questions">General Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#container-runtime">Container Runtime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#container-images">Container images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#ecosystem-enablement">Ecosystem enablement</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deprecated.html">Deprecated Features, Software and Images</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deprecated.html#version-1-0">Version 1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deprecated.html#version-2-0">Version 2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deprecated.html#nvidia-caffe">NVIDIA Caffe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deprecated.html#nvidia-digits">NVIDIA DIGITS</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">NVIDIA GPU Operator</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gpu-operator/testing.html">Quality Assurance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gpu-operator/testing.html#setups-that-are-tested">Setups that are tested</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpu-operator/testing.html#positive-tests">Positive Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpu-operator/testing.html#negative-tests">Negative Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpu-operator/testing.html#automated-end-to-end-tests">Automated End to End Tests</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Cloud Native Products</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Quickstart</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/toolkit/quickstart.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="quickstart">
+<h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#what-is-docker" id="id1">What is Docker?</a></p></li>
+<li><p><a class="reference internal" href="#benefits-of-gpu-containerization" id="id2">Benefits of GPU containerization</a></p></li>
+<li><p><a class="reference internal" href="#background-of-the-nvidia-container-toolkit" id="id3">Background of the NVIDIA Container Toolkit</a></p></li>
+<li><p><a class="reference internal" href="#prerequisites-of-the-nvidia-container-toolkit" id="id4">Prerequisites of the NVIDIA Container Toolkit</a></p></li>
+<li><p><a class="reference internal" href="#installation-of-the-nvidia-container-toolkit" id="id5">Installation of the NVIDIA Container Toolkit</a></p></li>
+<li><p><a class="reference internal" href="#usage-of-the-nvidia-container-toolkit" id="id6">Usage of the NVIDIA Container Toolkit</a></p></li>
+</ul>
+</div>
+<div class="section" id="what-is-docker">
+<h2><a class="toc-backref" href="#id1">What is Docker?</a><a class="headerlink" href="#what-is-docker" title="Permalink to this headline">¶</a></h2>
+<p>From the <a class="reference external" href="https://www.docker.com/what-docker">official Docker website</a> :</p>
+<p>More high-level information about Docker can be found on the <a class="reference external" href="https://github.com/moby/moby/blob/master/README.md">Moby project README</a>. Technical documentation can be found <a class="reference external" href="https://docs.docker.com/">here</a>.</p>
+</div>
+<div class="section" id="benefits-of-gpu-containerization">
+<h2><a class="toc-backref" href="#id2">Benefits of GPU containerization</a><a class="headerlink" href="#benefits-of-gpu-containerization" title="Permalink to this headline">¶</a></h2>
+<p>Containerizing GPU applications provides several benefits, among them:</p>
+<ul class="simple">
+<li><p>Ease of deployment</p></li>
+<li><p>Isolation of individual devices</p></li>
+<li><p>Run across heterogeneous driver/toolkit environments</p></li>
+<li><p>Requires only the NVIDIA driver to be installed on the host</p></li>
+<li><p>Facilitate collaboration: reproducible builds, reproducible performance, reproducible results.</p></li>
+</ul>
+</div>
+<div class="section" id="background-of-the-nvidia-container-toolkit">
+<h2><a class="toc-backref" href="#id3">Background of the NVIDIA Container Toolkit</a><a class="headerlink" href="#background-of-the-nvidia-container-toolkit" title="Permalink to this headline">¶</a></h2>
+<p>Docker® containers are often used to seamlessly deploy CPU-based applications on multiple machines. With this use case, containers are both <em>hardware-agnostic</em> and <em>platform-agnostic</em>. This is obviously not the case when using NVIDIA GPUs since it is using specialized hardware and it requires the installation of the NVIDIA driver. As a result, Docker Engine does not natively support NVIDIA GPUs with containers.</p>
+<p>To solve this problem, one of the early solutions that emerged was to fully reinstall the NVIDIA driver inside the container and then pass the character devices corresponding to the NVIDIA GPUs (e.g. <code class="docutils literal notranslate"><span class="pre">/dev/nvidia0</span></code> ) when starting the container. However, this solution was brittle: the version of the host driver had to exactly match driver version installed in the container. The Docker images could not be shared and had to be built locally on each machine, defeating one of the main advantages of Docker.</p>
+<p>To make the Docker images portable while still leveraging NVIDIA GPUs, the container images must be agnostic of the NVIDIA driver. This repository provides utilities to enable GPU support inside the container runtime.</p>
+</div>
+<div class="section" id="prerequisites-of-the-nvidia-container-toolkit">
+<h2><a class="toc-backref" href="#id4">Prerequisites of the NVIDIA Container Toolkit</a><a class="headerlink" href="#prerequisites-of-the-nvidia-container-toolkit" title="Permalink to this headline">¶</a></h2>
+<p>The list of prerequisites for running the NVIDIA runtime is described below.
+For information on how to install Docker for your Linux distribution, please refer to the <a class="reference external" href="https://docs.docker.com/engine/installation">Docker documentation</a>.</p>
+<ul class="simple">
+<li><p>GNU/Linux x86_64 with kernel version &gt; 3.10</p></li>
+<li><p>Docker &gt;= 19.03</p></li>
+<li><p>NVIDIA GPU with Architecture &gt; Fermi (2.1)</p></li>
+<li><p><a class="reference external" href="http://www.nvidia.com/object/unix.html">NVIDIA drivers</a> ~= 361.93 (untested on older versions)</p></li>
+</ul>
+<p>Your driver version might limit your CUDA capabilities (see <a class="reference external" href="CUDA#requirements">CUDA requirements</a> )</p>
+</div>
+<div class="section" id="installation-of-the-nvidia-container-toolkit">
+<h2><a class="toc-backref" href="#id5">Installation of the NVIDIA Container Toolkit</a><a class="headerlink" href="#installation-of-the-nvidia-container-toolkit" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>Ensure you are on a <a class="reference internal" href="platform.html#linux-distribution-matrix"><span class="std std-ref">supported distribution</span></a></p></li>
+<li><p>Install the <code class="docutils literal notranslate"><span class="pre">nvidia-container-toolkit</span></code> package:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Ubuntu/Debian Package Repositories
+$ distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+$ curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+$ curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+
+# RHEL / Centos Package Repositories
+$ distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+$ curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.repo | sudo tee /etc/yum.repos.d/nvidia-docker.repo
+
+
+$ sudo apt-get install -y nvidia-container-toolkit
+$ sudo yum install -y nvidia-container-toolkit
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="usage-of-the-nvidia-container-toolkit">
+<h2><a class="toc-backref" href="#id6">Usage of the NVIDIA Container Toolkit</a><a class="headerlink" href="#usage-of-the-nvidia-container-toolkit" title="Permalink to this headline">¶</a></h2>
+<p>The NVIDIA runtime is integrated with the Docker CLI and GPUs can be accessed seamlessly by the container via the Docker CLI options. Some examples are shown below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Starting a GPU enabled container
+$ docker run --gpus all nvidia/cuda nvidia-smi
+
+# Start a GPU enabled container on two GPUs
+$ docker run --gpus 2 nvidia/cuda nvidia-smi
+
+# Starting a GPU enabled container on specific GPUs
+$ docker run --gpus &#39;&quot;device=1,2&quot;&#39; nvidia/cuda:9.0-base nvidia-smi
+$ docker run --gpus &#39;&quot;device=UUID-ABCDEF,1&quot;&#39; nvidia/cuda:9.0-base nvidia-smi
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="container-images.html" class="btn btn-neutral float-right" title="Container images" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="NVIDIA Cloud Native Products" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, NVIDIA Corporation
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

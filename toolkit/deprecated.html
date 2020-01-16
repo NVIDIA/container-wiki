@@ -1,0 +1,383 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Deprecated Features, Software and Images &mdash; Cloud Native Products  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Quality Assurance" href="../gpu-operator/testing.html" />
+    <link rel="prev" title="Frequently Asked Questions" href="faq.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Cloud Native Products
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">NVIDIA Container Toolkit</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#what-is-docker">What is Docker?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#benefits-of-gpu-containerization">Benefits of GPU containerization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#background-of-the-nvidia-container-toolkit">Background of the NVIDIA Container Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#prerequisites-of-the-nvidia-container-toolkit">Prerequisites of the NVIDIA Container Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#installation-of-the-nvidia-container-toolkit">Installation of the NVIDIA Container Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#usage-of-the-nvidia-container-toolkit">Usage of the NVIDIA Container Toolkit</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="container-images.html">Container images</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="container-images.html#using-cuda-images">Using CUDA images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="container-images.html#using-ngc-images">Using NGC images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="container-images.html#using-non-cuda-images">Using non-CUDA images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="container-images.html#writing-dockerfiles">Writing Dockerfiles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="platform.html">Platform support Information</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="platform.html#linux-distribution-matrix">Linux Distribution Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="platform.html#additional-support-information">Additional Support Information</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#general-questions">General Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#container-runtime">Container Runtime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#container-images">Container images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#ecosystem-enablement">Ecosystem enablement</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Deprecated Features, Software and Images</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#version-1-0">Version 1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-2-0">Version 2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nvidia-caffe">NVIDIA Caffe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nvidia-digits">NVIDIA DIGITS</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">NVIDIA GPU Operator</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gpu-operator/testing.html">Quality Assurance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gpu-operator/testing.html#setups-that-are-tested">Setups that are tested</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpu-operator/testing.html#positive-tests">Positive Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpu-operator/testing.html#negative-tests">Negative Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpu-operator/testing.html#automated-end-to-end-tests">Automated End to End Tests</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Cloud Native Products</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Deprecated Features, Software and Images</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/toolkit/deprecated.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="deprecated-features-software-and-images">
+<h1>Deprecated Features, Software and Images<a class="headerlink" href="#deprecated-features-software-and-images" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#version-1-0" id="id9">Version 1.0</a></p></li>
+<li><p><a class="reference internal" href="#version-2-0" id="id10">Version 2.0</a></p>
+<ul>
+<li><p><a class="reference internal" href="#quickstart" id="id11">Quickstart</a></p></li>
+<li><p><a class="reference internal" href="#notes-about-version-2-0" id="id12">Notes about Version 2.0</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#nvidia-caffe" id="id13">NVIDIA Caffe</a></p></li>
+<li><p><a class="reference internal" href="#nvidia-digits" id="id14">NVIDIA DIGITS</a></p></li>
+</ul>
+</div>
+<div class="section" id="version-1-0">
+<span id="nvidia-docker-version-1-0"></span><h2><a class="toc-backref" href="#id9">Version 1.0</a><a class="headerlink" href="#version-1-0" title="Permalink to this headline">¶</a></h2>
+<p>The list of prerequisites for running <code class="docutils literal notranslate"><span class="pre">nvidia-docker</span></code> is described below.
+For information on how to install Docker for your Linux distribution, please refer to the <a class="reference external" href="https://docs.docker.com/engine/installation">Docker documentation</a>.</p>
+<ol class="arabic simple">
+<li><p>GNU/Linux x86_64 with kernel version &gt; 3.10</p></li>
+<li><p>Docker &gt;= 1.9 (official <code class="docutils literal notranslate"><span class="pre">docker-engine</span></code> , <code class="docutils literal notranslate"><span class="pre">docker-ce</span></code> or <code class="docutils literal notranslate"><span class="pre">docker-ee</span></code> only)</p></li>
+<li><p>NVIDIA GPU with Architecture &gt; Fermi (2.1)</p></li>
+<li><p><a class="reference external" href="http://www.nvidia.com/object/unix.html">NVIDIA drivers</a> &gt;= 340.29 with binary <code class="docutils literal notranslate"><span class="pre">nvidia-modprobe</span></code></p></li>
+</ol>
+<p>Your driver version might limit your CUDA capabilities (see <a class="reference external" href="CUDA#requirements">CUDA requirements</a> )</p>
+<ol class="arabic simple">
+<li><p>Install the repository for your distribution by following the instructions <a class="reference external" href="http://nvidia.github.io/nvidia-docker/">here</a>.</p></li>
+<li><p>Install the <code class="docutils literal notranslate"><span class="pre">nvidia-docker</span></code> package</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># For Ubuntu distributions</span>
+sudo apt-get install nvidia-docker
+
+<span class="c1"># For Centos distributions</span>
+sudo yum install nvidia-docker
+
+<span class="c1"># Basic usage</span>
+nvidia-docker run --rm nvidia/cuda nvidia-smi
+</pre></div>
+</div>
+<p>The package installation will automatically setup the <code class="docutils literal notranslate"><span class="pre">nvidia-docker-plugin</span></code> and depending on your distribution, register it with the init system.</p>
+</div>
+<div class="section" id="version-2-0">
+<h2><a class="toc-backref" href="#id10">Version 2.0</a><a class="headerlink" href="#version-2-0" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="quickstart">
+<h3><a class="toc-backref" href="#id11">Quickstart</a><a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h3>
+<p>The list of prerequisites for running nvidia-docker 2.0 is described below.
+For information on how to install Docker for your Linux distribution, please refer to the <a class="reference external" href="https://docs.docker.com/engine/installation">Docker documentation</a>.</p>
+<ol class="arabic simple">
+<li><p>GNU/Linux x86_64 with kernel version &gt; 3.10</p></li>
+<li><p>Docker &gt;= 1.12</p></li>
+<li><p>NVIDIA GPU with Architecture &gt; Fermi (2.1)</p></li>
+<li><p><a class="reference external" href="http://www.nvidia.com/object/unix.html">NVIDIA drivers</a> ~= 361.93 (untested on older versions)</p></li>
+</ol>
+<p>Note: Your driver version might limit your CUDA capabilities (see <a class="reference external" href="CUDA#requirements">CUDA requirements</a>)</p>
+<ol class="arabic simple">
+<li><p>Install the repository for your distribution by following the instructions <a class="reference external" href="http://nvidia.github.io/nvidia-docker/">here</a>.</p></li>
+<li><p>Install the <code class="docutils literal notranslate"><span class="pre">nvidia-docker2</span></code> package and reload the Docker daemon configuration:</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># For Ubuntu distributions</span>
+sudo apt-get install nvidia-docker2
+sudo pkill -SIGHUP dockerd
+
+<span class="c1"># For Centos distributions</span>
+sudo yum install nvidia-docker2
+sudo pkill -SIGHUP dockerd
+</pre></div>
+</div>
+<p>nvidia-docker registers a new container runtime to the Docker daemon.
+You must select the <code class="docutils literal notranslate"><span class="pre">nvidia</span></code> runtime when using <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">runtime</span><span class="o">=</span><span class="n">nvidia</span> <span class="o">--</span><span class="n">rm</span> <span class="n">nvidia</span><span class="o">/</span><span class="n">cuda</span> <span class="n">nvidia</span><span class="o">-</span><span class="n">smi</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="notes-about-version-2-0">
+<h3><a class="toc-backref" href="#id12">Notes about Version 2.0</a><a class="headerlink" href="#notes-about-version-2-0" title="Permalink to this headline">¶</a></h3>
+<p>Version 1.0 of the nvidia-docker package must be cleanly removed before continuing.
+You must stop and remove <strong>all</strong> containers started with nvidia-docker 1.0.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>docker volume ls -q -f <span class="nv">driver</span><span class="o">=</span>nvidia-docker <span class="p">|</span> xargs -r -I<span class="o">{}</span> -n1 docker ps -q -a -f <span class="nv">volume</span><span class="o">={}</span> <span class="p">|</span> xargs -r docker rm -f
+
+<span class="c1"># For Ubuntu distributions</span>
+sudo apt-get purge nvidia-docker
+
+<span class="c1"># For Centos distributions</span>
+sudo yum remove nvidia-docker
+</pre></div>
+</div>
+<p>For older versions of Docker, you must pin the versions of both <code class="docutils literal notranslate"><span class="pre">nvidia-docker2</span></code> and <code class="docutils literal notranslate"><span class="pre">nvidia-container-runtime</span></code> when installing, for instance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">nvidia</span><span class="o">-</span><span class="n">docker2</span><span class="o">=</span><span class="mf">2.0</span><span class="o">.</span><span class="mi">1</span><span class="o">+</span><span class="n">docker1</span><span class="o">.</span><span class="mf">12.6</span><span class="o">-</span><span class="mi">1</span> <span class="n">nvidia</span><span class="o">-</span><span class="n">container</span><span class="o">-</span><span class="n">runtime</span><span class="o">=</span><span class="mf">1.1</span><span class="o">.</span><span class="mi">0</span><span class="o">+</span><span class="n">docker1</span><span class="o">.</span><span class="mf">12.6</span><span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">apt-cache</span> <span class="pre">madison</span> <span class="pre">nvidia-docker2</span> <span class="pre">nvidia-container-runtime</span></code> or <code class="docutils literal notranslate"><span class="pre">yum</span> <span class="pre">search</span> <span class="pre">--showduplicates</span> <span class="pre">nvidia-docker2</span> <span class="pre">nvidia-container-runtime</span></code> to list the available versions.</p>
+</div>
+</div>
+<div class="section" id="nvidia-caffe">
+<span id="id5"></span><h2><a class="toc-backref" href="#id13">NVIDIA Caffe</a><a class="headerlink" href="#nvidia-caffe" title="Permalink to this headline">¶</a></h2>
+<p>Docker image based on <a class="reference external" href="https://github.com/NVIDIA/caffe">NVIDIA/caffe</a>, NVIDIA’s fork of <a class="reference external" href="https://github.com/BVLC/caffe">BVLC/caffe</a>.</p>
+<p>See the requirements for <a class="reference external" href="CUDA#requirements">CUDA</a> since the Caffe image is based on a cuDNN runtime image.</p>
+<p>This image can be used as a base image for other images like DIGITS, or it can be used directly to train networks:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run a Caffe training job</span>
+docker run --rm --runtime<span class="o">=</span>nvidia nvidia/caffe caffe train --solver &lt;args&gt;
+</pre></div>
+</div>
+<p>Check the <a class="reference external" href="https://hub.docker.com/r/nvidia/caffe/">DockerHub</a> for available tags.</p>
+</div>
+<div class="section" id="nvidia-digits">
+<span id="id7"></span><h2><a class="toc-backref" href="#id14">NVIDIA DIGITS</a><a class="headerlink" href="#nvidia-digits" title="Permalink to this headline">¶</a></h2>
+<p>Docker image based on <a class="reference external" href="https://github.com/NVIDIA/DIGITS">DIGITS</a>.</p>
+<p>See the requirements for <a class="reference external" href="CUDA#requirements">CUDA</a> since the DIGITS image is based on a cuDNN runtime image.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run DIGITS on host port 5000</span>
+docker run --runtime<span class="o">=</span>nvidia --name digits -d -p <span class="m">5000</span>:5000 nvidia/digits
+</pre></div>
+</div>
+<p>If you want to use a dataset stored in a host directory, you will need to import it inside the container using a volume:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run DIGITS with the mnist dataset stored on the host under /opt/mnist</span>
+docker run --runtime<span class="o">=</span>nvidia --name digits -d -p <span class="m">5000</span>:5000 -v /opt/mnist:/data/mnist nvidia/digits
+</pre></div>
+</div>
+<p>If you want to persist jobs across multiple DIGITS containers, you can use a named volume. For DIGITS 3.0:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run DIGITS storing jobs in a host volume named digits-jobs</span>
+
+<span class="c1"># For DIGITS 3.0</span>
+docker run --runtime<span class="o">=</span>nvidia --name digits -d -p <span class="m">5000</span>:34448 -v digits-jobs:/usr/share/digits/digits/jobs nvidia/digits:3.0
+
+<span class="c1"># For DIGITS 3.3 and 4.0</span>
+docker run --runtime<span class="o">=</span>nvidia --name digits -d -p <span class="m">5000</span>:34448 -v digits-jobs:/jobs nvidia/digits:4.0
+
+<span class="c1"># For DIGITS 5.0</span>
+docker run --runtime<span class="o">=</span>nvidia --name digits -d -p <span class="m">5000</span>:5000 -v digits-jobs:/jobs nvidia/digits:5.0
+
+<span class="c1"># For DIGITS 6.0</span>
+docker run --runtime<span class="o">=</span>nvidia --name digits -d -p <span class="m">5000</span>:5000 -p <span class="m">6006</span>:6006 -v digits-jobs:/jobs nvidia/digits:6.0
+</pre></div>
+</div>
+<p>Check the <a class="reference external" href="https://hub.docker.com/r/nvidia/digits/">DockerHub</a> for available tags.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../gpu-operator/testing.html" class="btn btn-neutral float-right" title="Quality Assurance" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="faq.html" class="btn btn-neutral float-left" title="Frequently Asked Questions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, NVIDIA Corporation
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

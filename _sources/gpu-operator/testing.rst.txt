@@ -14,22 +14,22 @@ Tested Platforms
 End to End Stories
 ------------------
 
-As a cluster, I want to be able to install the GPU Operator with helm, Kubernetes, Ubuntu and Docker.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+As a cluster admin, I want to be able to install the GPU Operator with helm, Kubernetes, Ubuntu and Docker.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * Validate that all pods are running.
 * Validate that we can run a CUDA application.
 * Validate that we can run a Tensorflow notebook.
 
-As a cluster, I want to be able to install the GPU Operator with helm, Openshift 4.1, RHCOS and CRIO.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+As a cluster admin, I want to be able to install the GPU Operator with helm, Openshift 4.1, RHCOS and CRIO.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * Validate that all pods are running.
 * Validate that we can run a CUDA application.
 * Validate that we can run a Tensorflow notebook.
 
-As a cluster, I want to be able to gather GPU metrics after installing the GPU Operator.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+As a cluster admin, I want to be able to gather GPU metrics after installing the GPU Operator.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * Validate that we can gather metrics.
 * Validate that we can plug the GPU metrics in something like Grafana or prometheus. Is it validating instructions and/or is this automatable? Probably not.

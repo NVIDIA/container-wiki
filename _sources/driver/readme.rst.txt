@@ -1,8 +1,14 @@
+Quickstart
+==========
 
 **Note that the features described below are currently beta**.
 
-Description
------------
+.. contents:: Table of Contents
+   :local:
+
+
+Description and Requirements
+----------------------------
 
 NVIDIA driver container images are available through the `NVIDIA public hub repository <https://hub.docker.com/r/nvidia/driver>`_.
 
@@ -15,12 +21,7 @@ It allows the provisioning of the NVIDIA driver through the use of containers wh
 
 For more information about its internals, check out this `presentation <https://docs.google.com/presentation/d/1NY4X2K6BMaByfnF9rMEcNq6hS3NtmOKGTfihZ44zfrw/edit?usp=sharing>`_.
 
-Requirements
-------------
-
-The list of prerequisites for running a driver container is described below.  
-
-
+The list of prerequisites for running a driver container is described below.
 #. Ubuntu 16.04, Ubuntu 18.04 or Centos 7 with the IPMI driver enabled and the Nouveau driver disabled
 #. NVIDIA GPU with Architecture > Fermi (2.1)
 #. A `supported version of Docker <https://github.com/NVIDIA/nvidia-docker/wiki/Frequently-Asked-Questions#which-docker-packages-are-supported>`_ 
@@ -85,15 +86,16 @@ Examples
 Quickstart
 ----------
 
-Ubuntu 18.04
-~~~~~~~~~~~~
+Ubuntu Distributions
+~~~~~~~~~~~~~~~~~~~~
 
 .. code-block::
 
    curl https://get.docker.com | sudo CHANNEL=stable sh
 
+   distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
    curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
-   curl -s -L https://nvidia.github.io/nvidia-docker/ubuntu18.04/nvidia-docker.list \
+   curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list \
      | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
 
    sudo apt-get update && sudo apt-get install -y nvidia-docker2
@@ -118,37 +120,8 @@ Ubuntu 18.04
 
    sudo docker run --rm --runtime=nvidia nvidia/cuda:9.2-base nvidia-smi
 
-Ubuntu 16.04
-~~~~~~~~~~~~
-
-.. code-block::
-
-   curl https://get.docker.com | sudo CHANNEL=stable sh
-
-   curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
-   curl -s -L https://nvidia.github.io/nvidia-docker/ubuntu16.04/nvidia-docker.list \
-     | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
-
-   sudo apt-get update && sudo apt-get install -y nvidia-docker2
-   sudo sed -i 's/^#root/root/' /etc/nvidia-container-runtime/config.toml
-
-   sudo tee /etc/modules-load.d/ipmi.conf <<< "ipmi_msghandler"
-   sudo tee /etc/modprobe.d/blacklist-nouveau.conf <<< "blacklist nouveau"
-   sudo tee -a /etc/modprobe.d/blacklist-nouveau.conf <<< "options nouveau modeset=0"
-   sudo update-initramfs -u
-
-   # Optionally, if the kernel is not up to date
-   # sudo apt-get dist-upgrade
-
-   sudo reboot
-
-   sudo docker run -d --privileged --pid=host -v /run/nvidia:/run/nvidia:shared \
-     --restart=unless-stopped nvidia/driver:396.37-ubuntu16.04 --accept-license
-
-   sudo docker run --rm --runtime=nvidia nvidia/cuda:9.2-base nvidia-smi
-
-Centos 7
-~~~~~~~~
+Centos Distributions
+~~~~~~~~~~~~~~~~~~~~
 
 .. code-block::
 

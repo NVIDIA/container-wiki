@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Description &mdash; Cloud Native Products  documentation</title>
+  <title>Quickstart &mdash; Cloud Native Products  documentation</title>
   
 
   
@@ -149,9 +149,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../gpu-operator/testing.html">Quality Assurance</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../gpu-operator/testing.html#tested-platforms">Tested Platforms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../gpu-operator/testing.html#end-to-end-stories">End to End Stories</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#as-a-cluster-i-want-to-be-able-to-install-the-gpu-operator-with-helm-kubernetes-ubuntu-and-docker">As a cluster, I want to be able to install the GPU Operator with helm, Kubernetes, Ubuntu and Docker.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#as-a-cluster-i-want-to-be-able-to-install-the-gpu-operator-with-helm-openshift-4-1-rhcos-and-crio">As a cluster, I want to be able to install the GPU Operator with helm, Openshift 4.1, RHCOS and CRIO.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#as-a-cluster-i-want-to-be-able-to-gather-gpu-metrics-after-installing-the-gpu-operator">As a cluster, I want to be able to gather GPU metrics after installing the GPU Operator.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#as-a-cluster-admin-i-want-to-be-able-to-install-the-gpu-operator-with-helm-kubernetes-ubuntu-and-docker">As a cluster admin, I want to be able to install the GPU Operator with helm, Kubernetes, Ubuntu and Docker.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#as-a-cluster-admin-i-want-to-be-able-to-install-the-gpu-operator-with-helm-openshift-4-1-rhcos-and-crio">As a cluster admin, I want to be able to install the GPU Operator with helm, Openshift 4.1, RHCOS and CRIO.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#as-a-cluster-admin-i-want-to-be-able-to-gather-gpu-metrics-after-installing-the-gpu-operator">As a cluster admin, I want to be able to gather GPU metrics after installing the GPU Operator.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#ipmi-msghandler-isn-t-loaded">ipmi_msghandler isn’t loaded</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#tainted-nodes">Tainted Nodes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#as-a-cluster-admin-i-want-to-ensure-that-the-gpu-operator-doesn-t-deploy-a-failing-monitoring-container">As a cluster admin, I want to ensure that the GPU Operator doesn’t deploy a failing monitoring container.</a></li>
@@ -169,18 +169,19 @@
 </ul>
 <p class="caption"><span class="caption-text">NVIDIA Driver Container</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Description</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#requirements">Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#configuration">Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#examples">Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#quickstart">Quickstart</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#ubuntu-18-04">Ubuntu 18.04</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ubuntu-16-04">Ubuntu 16.04</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#centos-7">Centos 7</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#description-and-requirements">Description and Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Quickstart</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ubuntu-distributions">Ubuntu Distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#centos-distributions">Centos Distributions</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#kubernetes-with-dockerd">Kubernetes with dockerd</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#tags-available">Tags available</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#kubernetes-with-dockerd">Kubernetes with dockerd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tags-available">Tags available</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -226,7 +227,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Description</li>
+      <li>Quickstart</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -245,9 +246,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <p><strong>Note that the features described below are currently beta</strong>.</p>
-<div class="section" id="description">
-<h1>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="quickstart">
+<h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
+<p><strong>Note that the features described below are currently beta</strong>.</p>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#description-and-requirements" id="id2">Description and Requirements</a></p></li>
+<li><p><a class="reference internal" href="#configuration" id="id3">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#examples" id="id4">Examples</a></p></li>
+<li><p><a class="reference internal" href="#id1" id="id5">Quickstart</a></p>
+<ul>
+<li><p><a class="reference internal" href="#ubuntu-distributions" id="id6">Ubuntu Distributions</a></p></li>
+<li><p><a class="reference internal" href="#centos-distributions" id="id7">Centos Distributions</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#kubernetes-with-dockerd" id="id8">Kubernetes with dockerd</a></p></li>
+<li><p><a class="reference internal" href="#tags-available" id="id9">Tags available</a></p></li>
+</ul>
+</div>
+<div class="section" id="description-and-requirements">
+<h2><a class="toc-backref" href="#id2">Description and Requirements</a><a class="headerlink" href="#description-and-requirements" title="Permalink to this headline">¶</a></h2>
 <p>NVIDIA driver container images are available through the <a class="reference external" href="https://hub.docker.com/r/nvidia/driver">NVIDIA public hub repository</a>.</p>
 <p>It allows the provisioning of the NVIDIA driver through the use of containers which provides several benefits over a standard driver installation, for example:</p>
 <ul class="simple">
@@ -256,20 +275,15 @@
 <li><p>Reproducibility</p></li>
 </ul>
 <p>For more information about its internals, check out this <a class="reference external" href="https://docs.google.com/presentation/d/1NY4X2K6BMaByfnF9rMEcNq6hS3NtmOKGTfihZ44zfrw/edit?usp=sharing">presentation</a>.</p>
-</div>
-<div class="section" id="requirements">
-<h1>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h1>
-<p>The list of prerequisites for running a driver container is described below.</p>
-<ol class="arabic simple">
-<li><p>Ubuntu 16.04, Ubuntu 18.04 or Centos 7 with the IPMI driver enabled and the Nouveau driver disabled</p></li>
-<li><p>NVIDIA GPU with Architecture &gt; Fermi (2.1)</p></li>
-<li><p>A <a class="reference external" href="https://github.com/NVIDIA/nvidia-docker/wiki/Frequently-Asked-Questions#which-docker-packages-are-supported">supported version of Docker</a></p></li>
-<li><p>The <a class="reference external" href="https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(version-2.0">NVIDIA Container Runtime for Docker</a>) configured with the <code class="docutils literal notranslate"><span class="pre">root</span></code> option</p></li>
-<li><p>If you are running Ubuntu 18.04 with an AWS kernel, you also need to enable the <code class="docutils literal notranslate"><span class="pre">i2c_core</span></code> kernel module</p></li>
-</ol>
+<p>The list of prerequisites for running a driver container is described below.
+#. Ubuntu 16.04, Ubuntu 18.04 or Centos 7 with the IPMI driver enabled and the Nouveau driver disabled
+#. NVIDIA GPU with Architecture &gt; Fermi (2.1)
+#. A <a class="reference external" href="https://github.com/NVIDIA/nvidia-docker/wiki/Frequently-Asked-Questions#which-docker-packages-are-supported">supported version of Docker</a>
+#. The <a class="reference external" href="https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(version-2.0">NVIDIA Container Runtime for Docker</a>) configured with the <code class="docutils literal notranslate"><span class="pre">root</span></code> option
+#. If you are running Ubuntu 18.04 with an AWS kernel, you also need to enable the <code class="docutils literal notranslate"><span class="pre">i2c_core</span></code> kernel module</p>
 </div>
 <div class="section" id="configuration">
-<h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
+<h2><a class="toc-backref" href="#id3">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
 <p>You will need to update the NVIDIA Container Toolkit config file so that the <code class="docutils literal notranslate"><span class="pre">root</span></code> directive points to the driver container:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">disable</span><span class="o">-</span><span class="n">require</span> <span class="o">=</span> <span class="n">false</span>
 <span class="c1">#swarm-resource = &quot;DOCKER_RESOURCE_GPU&quot;</span>
@@ -291,7 +305,7 @@
 </div>
 </div>
 <div class="section" id="examples">
-<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
+<h2><a class="toc-backref" href="#id4">Examples</a><a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the driver container for Ubuntu 16.04 LTS in interactive mode</span>
 docker run -it --name nvidia-driver --privileged --pid<span class="o">=</span>host -v /run/nvidia:/run/nvidia:shared <span class="se">\</span>
   nvidia/driver:396.37-ubuntu16.04
@@ -320,70 +334,43 @@ docker <span class="nb">exec</span> nvidia-driver nvidia-driver update --kernel 
 </pre></div>
 </div>
 </div>
-<div class="section" id="quickstart">
-<h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="ubuntu-18-04">
-<h2>Ubuntu 18.04<a class="headerlink" href="#ubuntu-18-04" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">get</span><span class="o">.</span><span class="n">docker</span><span class="o">.</span><span class="n">com</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">CHANNEL</span><span class="o">=</span><span class="n">stable</span> <span class="n">sh</span>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id5">Quickstart</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ubuntu-distributions">
+<h3><a class="toc-backref" href="#id6">Ubuntu Distributions</a><a class="headerlink" href="#ubuntu-distributions" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>curl https://get.docker.com | sudo CHANNEL=stable sh
 
-<span class="n">curl</span> <span class="o">-</span><span class="n">s</span> <span class="o">-</span><span class="n">L</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">nvidia</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">nvidia</span><span class="o">-</span><span class="n">docker</span><span class="o">/</span><span class="n">gpgkey</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">key</span> <span class="n">add</span> <span class="o">-</span>
-<span class="n">curl</span> <span class="o">-</span><span class="n">s</span> <span class="o">-</span><span class="n">L</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">nvidia</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">nvidia</span><span class="o">-</span><span class="n">docker</span><span class="o">/</span><span class="n">ubuntu18</span><span class="o">.</span><span class="mi">04</span><span class="o">/</span><span class="n">nvidia</span><span class="o">-</span><span class="n">docker</span><span class="o">.</span><span class="n">list</span> \
-  <span class="o">|</span> <span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">nvidia</span><span class="o">-</span><span class="n">docker</span><span class="o">.</span><span class="n">list</span>
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list \
+  | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
 
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">nvidia</span><span class="o">-</span><span class="n">docker2</span>
-<span class="n">sudo</span> <span class="n">sed</span> <span class="o">-</span><span class="n">i</span> <span class="s1">&#39;s/^#root/root/&#39;</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nvidia</span><span class="o">-</span><span class="n">container</span><span class="o">-</span><span class="n">runtime</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">toml</span>
+sudo apt-get update &amp;&amp; sudo apt-get install -y nvidia-docker2
+sudo sed -i &#39;s/^#root/root/&#39; /etc/nvidia-container-runtime/config.toml
 
-<span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">modules</span><span class="o">-</span><span class="n">load</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">ipmi</span><span class="o">.</span><span class="n">conf</span> <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;ipmi_msghandler&quot;</span>
-<span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">modprobe</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">blacklist</span><span class="o">-</span><span class="n">nouveau</span><span class="o">.</span><span class="n">conf</span> <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;blacklist nouveau&quot;</span>
-<span class="n">sudo</span> <span class="n">tee</span> <span class="o">-</span><span class="n">a</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">modprobe</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">blacklist</span><span class="o">-</span><span class="n">nouveau</span><span class="o">.</span><span class="n">conf</span> <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;options nouveau modeset=0&quot;</span>
+sudo tee /etc/modules-load.d/ipmi.conf &lt;&lt;&lt; &quot;ipmi_msghandler&quot;
+sudo tee /etc/modprobe.d/blacklist-nouveau.conf &lt;&lt;&lt; &quot;blacklist nouveau&quot;
+sudo tee -a /etc/modprobe.d/blacklist-nouveau.conf &lt;&lt;&lt; &quot;options nouveau modeset=0&quot;
 
-<span class="c1"># If you are running with an AWS kernel</span>
-<span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">modules</span><span class="o">-</span><span class="n">load</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">ipmi</span><span class="o">.</span><span class="n">conf</span> <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;i2c_core&quot;</span>
+# If you are running with an AWS kernel
+sudo tee /etc/modules-load.d/ipmi.conf &lt;&lt;&lt; &quot;i2c_core&quot;
 
-<span class="n">sudo</span> <span class="n">update</span><span class="o">-</span><span class="n">initramfs</span> <span class="o">-</span><span class="n">u</span>
+sudo update-initramfs -u
 
-<span class="c1"># Optionally, if the kernel is not up to date</span>
-<span class="c1"># sudo apt-get dist-upgrade</span>
+# Optionally, if the kernel is not up to date
+# sudo apt-get dist-upgrade
 
-<span class="n">sudo</span> <span class="n">reboot</span>
+sudo reboot
 
-<span class="n">sudo</span> <span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="o">--</span><span class="n">privileged</span> <span class="o">--</span><span class="n">pid</span><span class="o">=</span><span class="n">host</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">nvidia</span><span class="p">:</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">nvidia</span><span class="p">:</span><span class="n">shared</span> \
-  <span class="o">--</span><span class="n">restart</span><span class="o">=</span><span class="n">unless</span><span class="o">-</span><span class="n">stopped</span> <span class="n">nvidia</span><span class="o">/</span><span class="n">driver</span><span class="p">:</span><span class="mf">418.40</span><span class="o">.</span><span class="mi">04</span><span class="o">-</span><span class="n">ubuntu18</span><span class="o">.</span><span class="mi">04</span> <span class="o">--</span><span class="n">accept</span><span class="o">-</span><span class="n">license</span>
+sudo docker run -d --privileged --pid=host -v /run/nvidia:/run/nvidia:shared \
+  --restart=unless-stopped nvidia/driver:418.40.04-ubuntu18.04 --accept-license
 
-<span class="n">sudo</span> <span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">rm</span> <span class="o">--</span><span class="n">runtime</span><span class="o">=</span><span class="n">nvidia</span> <span class="n">nvidia</span><span class="o">/</span><span class="n">cuda</span><span class="p">:</span><span class="mf">9.2</span><span class="o">-</span><span class="n">base</span> <span class="n">nvidia</span><span class="o">-</span><span class="n">smi</span>
+sudo docker run --rm --runtime=nvidia nvidia/cuda:9.2-base nvidia-smi
 </pre></div>
 </div>
 </div>
-<div class="section" id="ubuntu-16-04">
-<h2>Ubuntu 16.04<a class="headerlink" href="#ubuntu-16-04" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">get</span><span class="o">.</span><span class="n">docker</span><span class="o">.</span><span class="n">com</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">CHANNEL</span><span class="o">=</span><span class="n">stable</span> <span class="n">sh</span>
-
-<span class="n">curl</span> <span class="o">-</span><span class="n">s</span> <span class="o">-</span><span class="n">L</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">nvidia</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">nvidia</span><span class="o">-</span><span class="n">docker</span><span class="o">/</span><span class="n">gpgkey</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">key</span> <span class="n">add</span> <span class="o">-</span>
-<span class="n">curl</span> <span class="o">-</span><span class="n">s</span> <span class="o">-</span><span class="n">L</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">nvidia</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">nvidia</span><span class="o">-</span><span class="n">docker</span><span class="o">/</span><span class="n">ubuntu16</span><span class="o">.</span><span class="mi">04</span><span class="o">/</span><span class="n">nvidia</span><span class="o">-</span><span class="n">docker</span><span class="o">.</span><span class="n">list</span> \
-  <span class="o">|</span> <span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">nvidia</span><span class="o">-</span><span class="n">docker</span><span class="o">.</span><span class="n">list</span>
-
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">nvidia</span><span class="o">-</span><span class="n">docker2</span>
-<span class="n">sudo</span> <span class="n">sed</span> <span class="o">-</span><span class="n">i</span> <span class="s1">&#39;s/^#root/root/&#39;</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nvidia</span><span class="o">-</span><span class="n">container</span><span class="o">-</span><span class="n">runtime</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">toml</span>
-
-<span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">modules</span><span class="o">-</span><span class="n">load</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">ipmi</span><span class="o">.</span><span class="n">conf</span> <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;ipmi_msghandler&quot;</span>
-<span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">modprobe</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">blacklist</span><span class="o">-</span><span class="n">nouveau</span><span class="o">.</span><span class="n">conf</span> <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;blacklist nouveau&quot;</span>
-<span class="n">sudo</span> <span class="n">tee</span> <span class="o">-</span><span class="n">a</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">modprobe</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">blacklist</span><span class="o">-</span><span class="n">nouveau</span><span class="o">.</span><span class="n">conf</span> <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;options nouveau modeset=0&quot;</span>
-<span class="n">sudo</span> <span class="n">update</span><span class="o">-</span><span class="n">initramfs</span> <span class="o">-</span><span class="n">u</span>
-
-<span class="c1"># Optionally, if the kernel is not up to date</span>
-<span class="c1"># sudo apt-get dist-upgrade</span>
-
-<span class="n">sudo</span> <span class="n">reboot</span>
-
-<span class="n">sudo</span> <span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="o">--</span><span class="n">privileged</span> <span class="o">--</span><span class="n">pid</span><span class="o">=</span><span class="n">host</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">nvidia</span><span class="p">:</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">nvidia</span><span class="p">:</span><span class="n">shared</span> \
-  <span class="o">--</span><span class="n">restart</span><span class="o">=</span><span class="n">unless</span><span class="o">-</span><span class="n">stopped</span> <span class="n">nvidia</span><span class="o">/</span><span class="n">driver</span><span class="p">:</span><span class="mf">396.37</span><span class="o">-</span><span class="n">ubuntu16</span><span class="o">.</span><span class="mi">04</span> <span class="o">--</span><span class="n">accept</span><span class="o">-</span><span class="n">license</span>
-
-<span class="n">sudo</span> <span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">rm</span> <span class="o">--</span><span class="n">runtime</span><span class="o">=</span><span class="n">nvidia</span> <span class="n">nvidia</span><span class="o">/</span><span class="n">cuda</span><span class="p">:</span><span class="mf">9.2</span><span class="o">-</span><span class="n">base</span> <span class="n">nvidia</span><span class="o">-</span><span class="n">smi</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="centos-7">
-<h2>Centos 7<a class="headerlink" href="#centos-7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="centos-distributions">
+<h3><a class="toc-backref" href="#id7">Centos Distributions</a><a class="headerlink" href="#centos-distributions" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">get</span><span class="o">.</span><span class="n">docker</span><span class="o">.</span><span class="n">com</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">CHANNEL</span><span class="o">=</span><span class="n">stable</span> <span class="n">sh</span>
 <span class="n">sudo</span> <span class="n">systemctl</span> <span class="n">enable</span> <span class="n">docker</span>
 
@@ -411,7 +398,7 @@ docker <span class="nb">exec</span> nvidia-driver nvidia-driver update --kernel 
 </div>
 </div>
 <div class="section" id="kubernetes-with-dockerd">
-<h1>Kubernetes with dockerd<a class="headerlink" href="#kubernetes-with-dockerd" title="Permalink to this headline">¶</a></h1>
+<h2><a class="toc-backref" href="#id8">Kubernetes with dockerd</a><a class="headerlink" href="#kubernetes-with-dockerd" title="Permalink to this headline">¶</a></h2>
 <p>Install <code class="docutils literal notranslate"><span class="pre">nvidia-docker2</span></code> and modify <code class="docutils literal notranslate"><span class="pre">/etc/nvidia-container-runtime/config.toml</span></code> as mentioned above.
 You also need to set the default docker runtime to <cite>``nvidia`</cite> &lt;<a class="reference external" href="https://github.com/nvidia/nvidia-container-runtime#docker-engine-setup">https://github.com/nvidia/nvidia-container-runtime#docker-engine-setup</a>&gt;`_.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># If running on bare-metal</span>
@@ -428,8 +415,9 @@ You also need to set the default docker runtime to <cite>``nvidia`</cite> &lt;<a
 </div>
 </div>
 <div class="section" id="tags-available">
-<h1>Tags available<a class="headerlink" href="#tags-available" title="Permalink to this headline">¶</a></h1>
+<h2><a class="toc-backref" href="#id9">Tags available</a><a class="headerlink" href="#tags-available" title="Permalink to this headline">¶</a></h2>
 <p>Check the <a class="reference external" href="https://hub.docker.com/r/nvidia/driver/">DockerHub</a></p>
+</div>
 </div>
 
 

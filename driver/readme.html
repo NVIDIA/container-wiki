@@ -1,0 +1,482 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Description &mdash; Cloud Native Products  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Quality Assurance" href="../gpu-operator/testing.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Cloud Native Products
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">NVIDIA Container Toolkit</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../toolkit/quickstart.html">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/quickstart.html#what-is-docker">What is Docker?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/quickstart.html#benefits-of-gpu-containerization">Benefits of GPU containerization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/quickstart.html#background-of-the-nvidia-container-toolkit">Background of the NVIDIA Container Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/quickstart.html#prerequisites-of-the-nvidia-container-toolkit">Prerequisites of the NVIDIA Container Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/quickstart.html#installation-of-the-nvidia-container-toolkit">Installation of the NVIDIA Container Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/quickstart.html#usage-of-the-nvidia-container-toolkit">Usage of the NVIDIA Container Toolkit</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../toolkit/container-images.html">Container images</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/container-images.html#using-cuda-images">Using CUDA images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/container-images.html#using-ngc-images">Using NGC images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/container-images.html#using-non-cuda-images">Using non-CUDA images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/container-images.html#writing-dockerfiles">Writing Dockerfiles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../toolkit/jetson.html">NVIDIA Container Runtime on Jetson (Beta)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/jetson.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/jetson.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/jetson.html#hello-world">Hello-world!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/jetson.html#building-cuda-in-containers-on-jetson">Building CUDA in Containers on Jetson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/jetson.html#enabling-jetson-containers-on-an-x86-workstation-using-qemu">Enabling Jetson Containers on an x86 workstation (using qemu)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/jetson.html#building-jetson-containers-on-an-x86-workstation-using-qemu">Building Jetson Containers on an x86 workstation (using qemu)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/jetson.html#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../toolkit/jetson.html#no-package-show-are-shown-in-dpkgs-output">No package show are shown in dpkg’s output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../toolkit/jetson.html#nvidia-docker2-package-is-missing-from-dpkgs-output">nvidia-docker2 package is missing from dpkg’s output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../toolkit/jetson.html#docker-info-doesnt-show-the-nvidia-runtime">Docker info doesn’t show the NVIDIA runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../toolkit/jetson.html#generating-and-viewing-logs">Generating and viewing logs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../toolkit/jetson.html#usr-local-cuda-is-readonly">/usr/local/cuda is readonly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../toolkit/jetson.html#running-or-building-a-container-on-x86-using-qemu-binfmt-misc-is-failing">Running or building a container on x86 (using qemu+binfmt_misc) is failing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../toolkit/jetson.html#mount-plugins">Mount Plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../toolkit/jetson.html#supported-devices">Supported Devices</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../toolkit/advanced-usage.html">Advanced Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/advanced-usage.html#general-topics">General Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/advanced-usage.html#nvidia-mps">NVIDIA MPS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/advanced-usage.html#internals-of-the-nvidia-container-toolkit">Internals of the NVIDIA Container Toolkit</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../toolkit/faq.html">Frequently Asked Questions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/faq.html#general-questions">General Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/faq.html#container-runtime">Container Runtime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/faq.html#container-images">Container images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/faq.html#ecosystem-enablement">Ecosystem enablement</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../toolkit/platform.html">Platform support Information</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/platform.html#linux-distribution-matrix">Linux Distribution Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/platform.html#additional-support-information">Additional Support Information</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../toolkit/deprecated.html">Deprecated Features, Software and Images</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/deprecated.html#version-1-0">Version 1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/deprecated.html#version-2-0">Version 2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/deprecated.html#nvidia-caffe">NVIDIA Caffe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../toolkit/deprecated.html#nvidia-digits">NVIDIA DIGITS</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">NVIDIA GPU Operator</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gpu-operator/testing.html">Quality Assurance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gpu-operator/testing.html#tested-platforms">Tested Platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpu-operator/testing.html#end-to-end-stories">End to End Stories</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#as-a-cluster-i-want-to-be-able-to-install-the-gpu-operator-with-helm-kubernetes-ubuntu-and-docker">As a cluster, I want to be able to install the GPU Operator with helm, Kubernetes, Ubuntu and Docker.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#as-a-cluster-i-want-to-be-able-to-install-the-gpu-operator-with-helm-openshift-4-1-rhcos-and-crio">As a cluster, I want to be able to install the GPU Operator with helm, Openshift 4.1, RHCOS and CRIO.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#as-a-cluster-i-want-to-be-able-to-gather-gpu-metrics-after-installing-the-gpu-operator">As a cluster, I want to be able to gather GPU metrics after installing the GPU Operator.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#ipmi-msghandler-isn-t-loaded">ipmi_msghandler isn’t loaded</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#tainted-nodes">Tainted Nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#as-a-cluster-admin-i-want-to-ensure-that-the-gpu-operator-doesn-t-deploy-a-failing-monitoring-container">As a cluster admin, I want to ensure that the GPU Operator doesn’t deploy a failing monitoring container.</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gpu-operator/testing.html#key-performance-indicator">Key Performance Indicator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#quality-assurance-score-card">Quality Assurance Score Card</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#performance-score-card">Performance Score Card</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#security-score-card">Security Score Card</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#bill-of-materials-score-card">Bill of Materials Score Card</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">NVIDIA Driver Container</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#examples">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#quickstart">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ubuntu-18-04">Ubuntu 18.04</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuntu-16-04">Ubuntu 16.04</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#centos-7">Centos 7</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#kubernetes-with-dockerd">Kubernetes with dockerd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#tags-available">Tags available</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Cloud Native Products</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Description</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/driver/readme.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p><strong>Note that the features described below are currently beta</strong>.</p>
+<div class="section" id="description">
+<h1>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h1>
+<p>NVIDIA driver container images are available through the <a class="reference external" href="https://hub.docker.com/r/nvidia/driver">NVIDIA public hub repository</a>.</p>
+<p>It allows the provisioning of the NVIDIA driver through the use of containers which provides several benefits over a standard driver installation, for example:</p>
+<ul class="simple">
+<li><p>Ease of deployment</p></li>
+<li><p>Fast installation</p></li>
+<li><p>Reproducibility</p></li>
+</ul>
+<p>For more information about its internals, check out this <a class="reference external" href="https://docs.google.com/presentation/d/1NY4X2K6BMaByfnF9rMEcNq6hS3NtmOKGTfihZ44zfrw/edit?usp=sharing">presentation</a>.</p>
+</div>
+<div class="section" id="requirements">
+<h1>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h1>
+<p>The list of prerequisites for running a driver container is described below.</p>
+<ol class="arabic simple">
+<li><p>Ubuntu 16.04, Ubuntu 18.04 or Centos 7 with the IPMI driver enabled and the Nouveau driver disabled</p></li>
+<li><p>NVIDIA GPU with Architecture &gt; Fermi (2.1)</p></li>
+<li><p>A <a class="reference external" href="https://github.com/NVIDIA/nvidia-docker/wiki/Frequently-Asked-Questions#which-docker-packages-are-supported">supported version of Docker</a></p></li>
+<li><p>The <a class="reference external" href="https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(version-2.0">NVIDIA Container Runtime for Docker</a>) configured with the <code class="docutils literal notranslate"><span class="pre">root</span></code> option</p></li>
+<li><p>If you are running Ubuntu 18.04 with an AWS kernel, you also need to enable the <code class="docutils literal notranslate"><span class="pre">i2c_core</span></code> kernel module</p></li>
+</ol>
+</div>
+<div class="section" id="configuration">
+<h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
+<p>You will need to update the NVIDIA Container Toolkit config file so that the <code class="docutils literal notranslate"><span class="pre">root</span></code> directive points to the driver container:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">disable</span><span class="o">-</span><span class="n">require</span> <span class="o">=</span> <span class="n">false</span>
+<span class="c1">#swarm-resource = &quot;DOCKER_RESOURCE_GPU&quot;</span>
+
+<span class="p">[</span><span class="n">nvidia</span><span class="o">-</span><span class="n">container</span><span class="o">-</span><span class="n">cli</span><span class="p">]</span>
+<span class="n">root</span> <span class="o">=</span> <span class="s2">&quot;/run/nvidia/driver&quot;</span>
+<span class="c1">#path = &quot;/usr/bin/nvidia-container-cli&quot;</span>
+<span class="n">environment</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1">#debug = &quot;/var/log/nvidia-container-toolkit.log&quot;</span>
+<span class="c1">#ldcache = &quot;/etc/ld.so.cache&quot;</span>
+<span class="n">load</span><span class="o">-</span><span class="n">kmods</span> <span class="o">=</span> <span class="n">true</span>
+<span class="c1">#no-cgroups = false</span>
+<span class="c1">#user = &quot;root:video&quot;</span>
+<span class="n">ldconfig</span> <span class="o">=</span> <span class="s2">&quot;@/sbin/ldconfig.real&quot;</span>
+
+<span class="p">[</span><span class="n">nvidia</span><span class="o">-</span><span class="n">container</span><span class="o">-</span><span class="n">runtime</span><span class="p">]</span>
+<span class="c1">#debug = &quot;/var/log/nvidia-container-runtime.log&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the driver container for Ubuntu 16.04 LTS in interactive mode</span>
+docker run -it --name nvidia-driver --privileged --pid<span class="o">=</span>host -v /run/nvidia:/run/nvidia:shared <span class="se">\</span>
+  nvidia/driver:396.37-ubuntu16.04
+
+<span class="c1"># Run the driver container for Ubuntu 16.04 AWS in detached mode</span>
+docker run -d --name nvidia-driver --privileged --pid<span class="o">=</span>host -v /run/nvidia:/run/nvidia:shared <span class="se">\</span>
+  nvidia/driver:396.37-ubuntu16.04-aws --accept-license
+
+<span class="c1"># Run the driver container for Ubuntu 16.04 HWE in detached mode with</span>
+<span class="c1"># auto-restarts and auto-detection of kernel updates (aka DKMS)</span>
+docker run -d --name nvidia-driver --privileged --pid<span class="o">=</span>host -v /run/nvidia:/run/nvidia:shared <span class="se">\</span>
+  --restart<span class="o">=</span>unless-stopped -v /etc/kernel/postinst.d:/run/kernel/postinst.d <span class="se">\</span>
+  nvidia/driver:396.37-ubuntu16.04-hwe --accept-license
+
+<span class="c1"># Run the driver container for Centos 7 in detached mode and check its logs</span>
+docker run -d --name nvidia-driver --privileged --pid<span class="o">=</span>host -v /run/nvidia:/run/nvidia:shared <span class="se">\</span>
+  nvidia/driver:396.37-centos7 --accept-license
+docker logs -f nvidia-driver
+
+<span class="c1"># Build a custom driver container image for Centos 7 with the current kernel</span>
+docker build -t nvidia-driver:centos7 --build-arg <span class="nv">KERNEL_VERSION</span><span class="o">=</span><span class="k">$(</span>uname -r<span class="k">)</span> <span class="se">\</span>
+  https://gitlab.com/nvidia/driver.git#centos7
+
+<span class="c1"># Perform a driver update ahead of time for a given kernel version</span>
+docker <span class="nb">exec</span> nvidia-driver nvidia-driver update --kernel <span class="m">4</span>.15.0-23
+</pre></div>
+</div>
+</div>
+<div class="section" id="quickstart">
+<h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ubuntu-18-04">
+<h2>Ubuntu 18.04<a class="headerlink" href="#ubuntu-18-04" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">get</span><span class="o">.</span><span class="n">docker</span><span class="o">.</span><span class="n">com</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">CHANNEL</span><span class="o">=</span><span class="n">stable</span> <span class="n">sh</span>
+
+<span class="n">curl</span> <span class="o">-</span><span class="n">s</span> <span class="o">-</span><span class="n">L</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">nvidia</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">nvidia</span><span class="o">-</span><span class="n">docker</span><span class="o">/</span><span class="n">gpgkey</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">key</span> <span class="n">add</span> <span class="o">-</span>
+<span class="n">curl</span> <span class="o">-</span><span class="n">s</span> <span class="o">-</span><span class="n">L</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">nvidia</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">nvidia</span><span class="o">-</span><span class="n">docker</span><span class="o">/</span><span class="n">ubuntu18</span><span class="o">.</span><span class="mi">04</span><span class="o">/</span><span class="n">nvidia</span><span class="o">-</span><span class="n">docker</span><span class="o">.</span><span class="n">list</span> \
+  <span class="o">|</span> <span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">nvidia</span><span class="o">-</span><span class="n">docker</span><span class="o">.</span><span class="n">list</span>
+
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">nvidia</span><span class="o">-</span><span class="n">docker2</span>
+<span class="n">sudo</span> <span class="n">sed</span> <span class="o">-</span><span class="n">i</span> <span class="s1">&#39;s/^#root/root/&#39;</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nvidia</span><span class="o">-</span><span class="n">container</span><span class="o">-</span><span class="n">runtime</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">toml</span>
+
+<span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">modules</span><span class="o">-</span><span class="n">load</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">ipmi</span><span class="o">.</span><span class="n">conf</span> <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;ipmi_msghandler&quot;</span>
+<span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">modprobe</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">blacklist</span><span class="o">-</span><span class="n">nouveau</span><span class="o">.</span><span class="n">conf</span> <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;blacklist nouveau&quot;</span>
+<span class="n">sudo</span> <span class="n">tee</span> <span class="o">-</span><span class="n">a</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">modprobe</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">blacklist</span><span class="o">-</span><span class="n">nouveau</span><span class="o">.</span><span class="n">conf</span> <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;options nouveau modeset=0&quot;</span>
+
+<span class="c1"># If you are running with an AWS kernel</span>
+<span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">modules</span><span class="o">-</span><span class="n">load</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">ipmi</span><span class="o">.</span><span class="n">conf</span> <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;i2c_core&quot;</span>
+
+<span class="n">sudo</span> <span class="n">update</span><span class="o">-</span><span class="n">initramfs</span> <span class="o">-</span><span class="n">u</span>
+
+<span class="c1"># Optionally, if the kernel is not up to date</span>
+<span class="c1"># sudo apt-get dist-upgrade</span>
+
+<span class="n">sudo</span> <span class="n">reboot</span>
+
+<span class="n">sudo</span> <span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="o">--</span><span class="n">privileged</span> <span class="o">--</span><span class="n">pid</span><span class="o">=</span><span class="n">host</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">nvidia</span><span class="p">:</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">nvidia</span><span class="p">:</span><span class="n">shared</span> \
+  <span class="o">--</span><span class="n">restart</span><span class="o">=</span><span class="n">unless</span><span class="o">-</span><span class="n">stopped</span> <span class="n">nvidia</span><span class="o">/</span><span class="n">driver</span><span class="p">:</span><span class="mf">418.40</span><span class="o">.</span><span class="mi">04</span><span class="o">-</span><span class="n">ubuntu18</span><span class="o">.</span><span class="mi">04</span> <span class="o">--</span><span class="n">accept</span><span class="o">-</span><span class="n">license</span>
+
+<span class="n">sudo</span> <span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">rm</span> <span class="o">--</span><span class="n">runtime</span><span class="o">=</span><span class="n">nvidia</span> <span class="n">nvidia</span><span class="o">/</span><span class="n">cuda</span><span class="p">:</span><span class="mf">9.2</span><span class="o">-</span><span class="n">base</span> <span class="n">nvidia</span><span class="o">-</span><span class="n">smi</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ubuntu-16-04">
+<h2>Ubuntu 16.04<a class="headerlink" href="#ubuntu-16-04" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">get</span><span class="o">.</span><span class="n">docker</span><span class="o">.</span><span class="n">com</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">CHANNEL</span><span class="o">=</span><span class="n">stable</span> <span class="n">sh</span>
+
+<span class="n">curl</span> <span class="o">-</span><span class="n">s</span> <span class="o">-</span><span class="n">L</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">nvidia</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">nvidia</span><span class="o">-</span><span class="n">docker</span><span class="o">/</span><span class="n">gpgkey</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">key</span> <span class="n">add</span> <span class="o">-</span>
+<span class="n">curl</span> <span class="o">-</span><span class="n">s</span> <span class="o">-</span><span class="n">L</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">nvidia</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">nvidia</span><span class="o">-</span><span class="n">docker</span><span class="o">/</span><span class="n">ubuntu16</span><span class="o">.</span><span class="mi">04</span><span class="o">/</span><span class="n">nvidia</span><span class="o">-</span><span class="n">docker</span><span class="o">.</span><span class="n">list</span> \
+  <span class="o">|</span> <span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">nvidia</span><span class="o">-</span><span class="n">docker</span><span class="o">.</span><span class="n">list</span>
+
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">nvidia</span><span class="o">-</span><span class="n">docker2</span>
+<span class="n">sudo</span> <span class="n">sed</span> <span class="o">-</span><span class="n">i</span> <span class="s1">&#39;s/^#root/root/&#39;</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nvidia</span><span class="o">-</span><span class="n">container</span><span class="o">-</span><span class="n">runtime</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">toml</span>
+
+<span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">modules</span><span class="o">-</span><span class="n">load</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">ipmi</span><span class="o">.</span><span class="n">conf</span> <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;ipmi_msghandler&quot;</span>
+<span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">modprobe</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">blacklist</span><span class="o">-</span><span class="n">nouveau</span><span class="o">.</span><span class="n">conf</span> <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;blacklist nouveau&quot;</span>
+<span class="n">sudo</span> <span class="n">tee</span> <span class="o">-</span><span class="n">a</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">modprobe</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">blacklist</span><span class="o">-</span><span class="n">nouveau</span><span class="o">.</span><span class="n">conf</span> <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;options nouveau modeset=0&quot;</span>
+<span class="n">sudo</span> <span class="n">update</span><span class="o">-</span><span class="n">initramfs</span> <span class="o">-</span><span class="n">u</span>
+
+<span class="c1"># Optionally, if the kernel is not up to date</span>
+<span class="c1"># sudo apt-get dist-upgrade</span>
+
+<span class="n">sudo</span> <span class="n">reboot</span>
+
+<span class="n">sudo</span> <span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="o">--</span><span class="n">privileged</span> <span class="o">--</span><span class="n">pid</span><span class="o">=</span><span class="n">host</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">nvidia</span><span class="p">:</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">nvidia</span><span class="p">:</span><span class="n">shared</span> \
+  <span class="o">--</span><span class="n">restart</span><span class="o">=</span><span class="n">unless</span><span class="o">-</span><span class="n">stopped</span> <span class="n">nvidia</span><span class="o">/</span><span class="n">driver</span><span class="p">:</span><span class="mf">396.37</span><span class="o">-</span><span class="n">ubuntu16</span><span class="o">.</span><span class="mi">04</span> <span class="o">--</span><span class="n">accept</span><span class="o">-</span><span class="n">license</span>
+
+<span class="n">sudo</span> <span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">rm</span> <span class="o">--</span><span class="n">runtime</span><span class="o">=</span><span class="n">nvidia</span> <span class="n">nvidia</span><span class="o">/</span><span class="n">cuda</span><span class="p">:</span><span class="mf">9.2</span><span class="o">-</span><span class="n">base</span> <span class="n">nvidia</span><span class="o">-</span><span class="n">smi</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="centos-7">
+<h2>Centos 7<a class="headerlink" href="#centos-7" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">get</span><span class="o">.</span><span class="n">docker</span><span class="o">.</span><span class="n">com</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">CHANNEL</span><span class="o">=</span><span class="n">stable</span> <span class="n">sh</span>
+<span class="n">sudo</span> <span class="n">systemctl</span> <span class="n">enable</span> <span class="n">docker</span>
+
+<span class="n">curl</span> <span class="o">-</span><span class="n">s</span> <span class="o">-</span><span class="n">L</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">nvidia</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">nvidia</span><span class="o">-</span><span class="n">docker</span><span class="o">/</span><span class="n">centos7</span><span class="o">/</span><span class="n">nvidia</span><span class="o">-</span><span class="n">docker</span><span class="o">.</span><span class="n">repo</span> \
+  <span class="o">|</span> <span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">yum</span><span class="o">.</span><span class="n">repos</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">nvidia</span><span class="o">-</span><span class="n">docker</span><span class="o">.</span><span class="n">repo</span>
+
+<span class="n">sudo</span> <span class="n">yum</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">nvidia</span><span class="o">-</span><span class="n">docker2</span>
+<span class="n">sudo</span> <span class="n">sed</span> <span class="o">-</span><span class="n">i</span> <span class="s1">&#39;s/^#root/root/&#39;</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nvidia</span><span class="o">-</span><span class="n">container</span><span class="o">-</span><span class="n">runtime</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">toml</span>
+
+<span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">modules</span><span class="o">-</span><span class="n">load</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">ipmi</span><span class="o">.</span><span class="n">conf</span> <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;ipmi_msghandler&quot;</span>
+<span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">modprobe</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">blacklist</span><span class="o">-</span><span class="n">nouveau</span><span class="o">.</span><span class="n">conf</span> <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;blacklist nouveau&quot;</span>
+<span class="n">sudo</span> <span class="n">tee</span> <span class="o">-</span><span class="n">a</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">modprobe</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">blacklist</span><span class="o">-</span><span class="n">nouveau</span><span class="o">.</span><span class="n">conf</span> <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;options nouveau modeset=0&quot;</span>
+
+<span class="c1"># Optionally, if the kernel is not up to date</span>
+<span class="c1"># sudo yum update</span>
+
+<span class="n">sudo</span> <span class="n">reboot</span>
+
+<span class="n">sudo</span> <span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="o">--</span><span class="n">privileged</span> <span class="o">--</span><span class="n">pid</span><span class="o">=</span><span class="n">host</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">nvidia</span><span class="p">:</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">nvidia</span><span class="p">:</span><span class="n">shared</span> \
+  <span class="o">--</span><span class="n">restart</span><span class="o">=</span><span class="n">unless</span><span class="o">-</span><span class="n">stopped</span> <span class="n">nvidia</span><span class="o">/</span><span class="n">driver</span><span class="p">:</span><span class="mf">396.37</span><span class="o">-</span><span class="n">centos7</span> <span class="o">--</span><span class="n">accept</span><span class="o">-</span><span class="n">license</span>
+
+<span class="n">sudo</span> <span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">rm</span> <span class="o">--</span><span class="n">runtime</span><span class="o">=</span><span class="n">nvidia</span> <span class="n">nvidia</span><span class="o">/</span><span class="n">cuda</span><span class="p">:</span><span class="mf">9.2</span><span class="o">-</span><span class="n">base</span> <span class="n">nvidia</span><span class="o">-</span><span class="n">smi</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="kubernetes-with-dockerd">
+<h1>Kubernetes with dockerd<a class="headerlink" href="#kubernetes-with-dockerd" title="Permalink to this headline">¶</a></h1>
+<p>Install <code class="docutils literal notranslate"><span class="pre">nvidia-docker2</span></code> and modify <code class="docutils literal notranslate"><span class="pre">/etc/nvidia-container-runtime/config.toml</span></code> as mentioned above.
+You also need to set the default docker runtime to <cite>``nvidia`</cite> &lt;<a class="reference external" href="https://github.com/nvidia/nvidia-container-runtime#docker-engine-setup">https://github.com/nvidia/nvidia-container-runtime#docker-engine-setup</a>&gt;`_.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># If running on bare-metal</span>
+<span class="n">kubectl</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">gitlab</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">nvidia</span><span class="o">/</span><span class="n">samples</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">driver</span><span class="o">/</span><span class="n">ubuntu16</span><span class="o">.</span><span class="mi">04</span><span class="o">/</span><span class="n">kubernetes</span><span class="o">/</span><span class="n">nvidia</span><span class="o">-</span><span class="n">driver</span><span class="o">.</span><span class="n">yml</span>
+
+<span class="c1"># If running on AWS</span>
+<span class="n">kubectl</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">gitlab</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">nvidia</span><span class="o">/</span><span class="n">samples</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">driver</span><span class="o">/</span><span class="n">ubuntu16</span><span class="o">.</span><span class="mi">04</span><span class="o">/</span><span class="n">kubernetes</span><span class="o">/</span><span class="n">nvidia</span><span class="o">-</span><span class="n">driver</span><span class="o">-</span><span class="n">aws</span><span class="o">.</span><span class="n">yml</span>
+</pre></div>
+</div>
+<p>You can now deploy the <a class="reference external" href="https://github.com/NVIDIA/k8s-device-plugin">NVIDIA device plugin</a>.</p>
+<p>Deleting the pod will unload the NVIDIA driver from the machine:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">delete</span> <span class="n">daemonset</span><span class="o">.</span><span class="n">apps</span><span class="o">/</span><span class="n">nvidia</span><span class="o">-</span><span class="n">driver</span><span class="o">-</span><span class="n">daemonset</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tags-available">
+<h1>Tags available<a class="headerlink" href="#tags-available" title="Permalink to this headline">¶</a></h1>
+<p>Check the <a class="reference external" href="https://hub.docker.com/r/nvidia/driver/">DockerHub</a></p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../gpu-operator/testing.html" class="btn btn-neutral float-left" title="Quality Assurance" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, NVIDIA Corporation
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

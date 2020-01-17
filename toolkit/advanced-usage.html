@@ -1,0 +1,496 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Advanced Usage &mdash; Cloud Native Products  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Frequently Asked Questions" href="faq.html" />
+    <link rel="prev" title="NVIDIA Container Runtime on Jetson (Beta)" href="jetson.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Cloud Native Products
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">NVIDIA Container Toolkit</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#what-is-docker">What is Docker?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#benefits-of-gpu-containerization">Benefits of GPU containerization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#background-of-the-nvidia-container-toolkit">Background of the NVIDIA Container Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#prerequisites-of-the-nvidia-container-toolkit">Prerequisites of the NVIDIA Container Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#installation-of-the-nvidia-container-toolkit">Installation of the NVIDIA Container Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#usage-of-the-nvidia-container-toolkit">Usage of the NVIDIA Container Toolkit</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="container-images.html">Container images</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="container-images.html#using-cuda-images">Using CUDA images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="container-images.html#using-ngc-images">Using NGC images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="container-images.html#using-non-cuda-images">Using non-CUDA images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="container-images.html#writing-dockerfiles">Writing Dockerfiles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jetson.html">NVIDIA Container Runtime on Jetson (Beta)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jetson.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetson.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetson.html#hello-world">Hello-world!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetson.html#building-cuda-in-containers-on-jetson">Building CUDA in Containers on Jetson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetson.html#enabling-jetson-containers-on-an-x86-workstation-using-qemu">Enabling Jetson Containers on an x86 workstation (using qemu)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetson.html#building-jetson-containers-on-an-x86-workstation-using-qemu">Building Jetson Containers on an x86 workstation (using qemu)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetson.html#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jetson.html#no-package-show-are-shown-in-dpkgs-output">No package show are shown in dpkg’s output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jetson.html#nvidia-docker2-package-is-missing-from-dpkgs-output">nvidia-docker2 package is missing from dpkg’s output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jetson.html#docker-info-doesnt-show-the-nvidia-runtime">Docker info doesn’t show the NVIDIA runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jetson.html#generating-and-viewing-logs">Generating and viewing logs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jetson.html#usr-local-cuda-is-readonly">/usr/local/cuda is readonly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jetson.html#running-or-building-a-container-on-x86-using-qemu-binfmt-misc-is-failing">Running or building a container on x86 (using qemu+binfmt_misc) is failing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jetson.html#mount-plugins">Mount Plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jetson.html#supported-devices">Supported Devices</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Advanced Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-topics">General Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nvidia-mps">NVIDIA MPS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#internals-of-the-nvidia-container-toolkit">Internals of the NVIDIA Container Toolkit</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#general-questions">General Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#container-runtime">Container Runtime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#container-images">Container images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#ecosystem-enablement">Ecosystem enablement</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="platform.html">Platform support Information</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="platform.html#linux-distribution-matrix">Linux Distribution Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="platform.html#additional-support-information">Additional Support Information</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deprecated.html">Deprecated Features, Software and Images</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deprecated.html#version-1-0">Version 1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deprecated.html#version-2-0">Version 2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deprecated.html#nvidia-caffe">NVIDIA Caffe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deprecated.html#nvidia-digits">NVIDIA DIGITS</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">NVIDIA GPU Operator</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gpu-operator/testing.html">Quality Assurance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gpu-operator/testing.html#tested-platforms">Tested Platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpu-operator/testing.html#end-to-end-stories">End to End Stories</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#as-a-cluster-i-want-to-be-able-to-install-the-gpu-operator-with-helm-kubernetes-ubuntu-and-docker">As a cluster, I want to be able to install the GPU Operator with helm, Kubernetes, Ubuntu and Docker.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#as-a-cluster-i-want-to-be-able-to-install-the-gpu-operator-with-helm-openshift-4-1-rhcos-and-crio">As a cluster, I want to be able to install the GPU Operator with helm, Openshift 4.1, RHCOS and CRIO.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#as-a-cluster-i-want-to-be-able-to-gather-gpu-metrics-after-installing-the-gpu-operator">As a cluster, I want to be able to gather GPU metrics after installing the GPU Operator.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#ipmi-msghandler-isn-t-loaded">ipmi_msghandler isn’t loaded</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#tainted-nodes">Tainted Nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#as-a-cluster-admin-i-want-to-ensure-that-the-gpu-operator-doesn-t-deploy-a-failing-monitoring-container">As a cluster admin, I want to ensure that the GPU Operator doesn’t deploy a failing monitoring container.</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gpu-operator/testing.html#key-performance-indicator">Key Performance Indicator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#quality-assurance-score-card">Quality Assurance Score Card</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#performance-score-card">Performance Score Card</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#security-score-card">Security Score Card</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#bill-of-materials-score-card">Bill of Materials Score Card</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">NVIDIA Driver Container</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../driver/readme.html">Description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../driver/readme.html#requirements">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../driver/readme.html#configuration">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../driver/readme.html#examples">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../driver/readme.html#quickstart">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../driver/readme.html#ubuntu-18-04">Ubuntu 18.04</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../driver/readme.html#ubuntu-16-04">Ubuntu 16.04</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../driver/readme.html#centos-7">Centos 7</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../driver/readme.html#kubernetes-with-dockerd">Kubernetes with dockerd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../driver/readme.html#tags-available">Tags available</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Cloud Native Products</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Advanced Usage</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/toolkit/advanced-usage.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="advanced-usage">
+<h1>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#general-topics" id="id2">General Topics</a></p>
+<ul>
+<li><p><a class="reference internal" href="#backward-compatibility" id="id3">Backward compatibility</a></p></li>
+<li><p><a class="reference internal" href="#existing-daemon-json" id="id4">Existing <code class="docutils literal notranslate"><span class="pre">daemon.json</span></code></a></p></li>
+<li><p><a class="reference internal" href="#default-runtime" id="id5">Default runtime</a></p></li>
+<li><p><a class="reference internal" href="#environment-variables" id="id6">Environment variables</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#nvidia-mps" id="id7">NVIDIA MPS</a></p>
+<ul>
+<li><p><a class="reference internal" href="#description" id="id8">Description</a></p></li>
+<li><p><a class="reference internal" href="#requirements" id="id9">Requirements</a></p></li>
+<li><p><a class="reference internal" href="#docker-compose" id="id10">Docker Compose</a></p>
+<ul>
+<li><p><a class="reference internal" href="#example" id="id11">Example</a></p></li>
+<li><p><a class="reference internal" href="#details" id="id12">Details</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#internals-of-the-nvidia-container-toolkit" id="id13">Internals of the NVIDIA Container Toolkit</a></p>
+<ul>
+<li><p><a class="reference internal" href="#challenges" id="id14">Challenges</a></p></li>
+<li><p><a class="reference internal" href="#nvidia-docker" id="id15">nvidia-docker</a></p></li>
+<li><p><a class="reference internal" href="#alternatives" id="id16">Alternatives</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="general-topics">
+<h2><a class="toc-backref" href="#id2">General Topics</a><a class="headerlink" href="#general-topics" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="backward-compatibility">
+<h3><a class="toc-backref" href="#id3">Backward compatibility</a><a class="headerlink" href="#backward-compatibility" title="Permalink to this headline">¶</a></h3>
+<p>To help transitioning code from 1.0 to 2.0, a bash script is provided in <code class="docutils literal notranslate"><span class="pre">/usr/bin/nvidia-docker</span></code> for backward compatibility.
+It will automatically inject the <code class="docutils literal notranslate"><span class="pre">--runtime=nvidia</span></code> argument and convert <code class="docutils literal notranslate"><span class="pre">NV_GPU</span></code> to <code class="docutils literal notranslate"><span class="pre">NVIDIA_VISIBLE_DEVICES</span></code>.</p>
+</div>
+<div class="section" id="existing-daemon-json">
+<h3><a class="toc-backref" href="#id4">Existing <code class="docutils literal notranslate"><span class="pre">daemon.json</span></code></a><a class="headerlink" href="#existing-daemon-json" title="Permalink to this headline">¶</a></h3>
+<p>If you have a custom <code class="docutils literal notranslate"><span class="pre">/etc/docker/daemon.json</span></code>, the <code class="docutils literal notranslate"><span class="pre">nvidia-docker2</span></code> package will override it.
+In this case, it is recommended to install <a class="reference external" href="https://github.com/nvidia/nvidia-container-runtime#installation">nvidia-container-runtime</a> instead and register the new runtime manually.</p>
+</div>
+<div class="section" id="default-runtime">
+<h3><a class="toc-backref" href="#id5">Default runtime</a><a class="headerlink" href="#default-runtime" title="Permalink to this headline">¶</a></h3>
+<p>The default runtime used by the Docker® Engine is <a class="reference external" href="https://github.com/opencontainers/runc">runc</a>, our runtime can become the default one by configuring the docker daemon with <code class="docutils literal notranslate"><span class="pre">--default-runtime=nvidia</span></code>.
+Doing so will remove the need to add the <code class="docutils literal notranslate"><span class="pre">--runtime=nvidia</span></code> argument to <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code>.
+It is also the only way to have GPU access during <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span></code>.</p>
+</div>
+<div class="section" id="environment-variables">
+<h3><a class="toc-backref" href="#id6">Environment variables</a><a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h3>
+<p>The behavior of the runtime can be modified through environment variables (such as <code class="docutils literal notranslate"><span class="pre">NVIDIA_VISIBLE_DEVICES</span></code>).
+Those environment variables are consumed by <a class="reference external" href="https://github.com/nvidia/nvidia-container-runtime">nvidia-container-runtime</a> and are documented <a class="reference external" href="https://github.com/nvidia/nvidia-container-runtime#environment-variables-oci-spec">here</a>.
+Our official CUDA images use default values for these variables.</p>
+</div>
+</div>
+<div class="section" id="nvidia-mps">
+<h2><a class="toc-backref" href="#id7">NVIDIA MPS</a><a class="headerlink" href="#nvidia-mps" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="description">
+<h3><a class="toc-backref" href="#id8">Description</a><a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h3>
+<p>A container image is available for the <a class="reference external" href="https://docs.nvidia.com/deploy/pdf/CUDA_Multi_Process_Service_Overview.pdf">Multi-Process Service (MPS)</a> control daemon.</p>
+<p><strong>Only Volta MPS is supported.</strong></p>
+<p>More information on Volta MPS can be found in the <a class="reference external" href="http://images.nvidia.com/content/volta-architecture/pdf/volta-architecture-whitepaper.pdf">Volta architecture whitepaper</a>:</p>
+<blockquote>
+<div><p>Volta provides very high throughput and low latency for deep learning inference particular when
+there is a batching system in place to aggregate images to submit
+to the GPU simultaneously to
+maximize performance. Without such a batching system, individual inference jobs do not fully
+utilize execution resources of a GPU. Volta MPS provides an easy option to improve throughput
+while satisfying latency targets, by permitting many individual inference jobs to be submitted
+concurrently to the GPU and improving overall GPU utilization.</p>
+</div></blockquote>
+</div>
+<div class="section" id="requirements">
+<h3><a class="toc-backref" href="#id9">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>NVIDIA GPU with Architecture &gt;= Volta (7.0)</p></li>
+<li><p>A <a class="reference external" href="https://github.com/NVIDIA/nvidia-docker/wiki/Frequently-Asked-Questions#which-docker-packages-are-supported">supported version of Docker</a>.</p></li>
+<li><p>The <a class="reference external" href="https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(version-2.0">NVIDIA Container Runtime for Docker</a>).</p></li>
+</ol>
+<p>If you are using Docker Compose, it might further restrict the version of the Docker Engine you need.</p>
+</div>
+<div class="section" id="docker-compose">
+<h3><a class="toc-backref" href="#id10">Docker Compose</a><a class="headerlink" href="#docker-compose" title="Permalink to this headline">¶</a></h3>
+<p>You need a version of <a class="reference external" href="https://docs.docker.com/compose/">Docker Compose</a> that supports the Compose file format version <code class="docutils literal notranslate"><span class="pre">2.3</span></code>.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file is provided in the <code class="docutils literal notranslate"><span class="pre">sample</span></code> repository on GitLab:
+<a class="reference external" href="https://gitlab.com/nvidia/samples/tree/master/mps">https://gitlab.com/nvidia/samples/tree/master/mps</a></p>
+<div class="section" id="example">
+<h4><a class="toc-backref" href="#id11">Example</a><a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone https://gitlab.com/nvidia/samples.git /tmp/samples
+$ cd /tmp/samples/mps
+$ export NVIDIA_VISIBLE_DEVICES=0
+$ export CUDA_MPS_ACTIVE_THREAD_PERCENTAGE=33
+$ docker-compose up
+</pre></div>
+</div>
+<p>Note: If you want the CUDA sample (here nbody) to run on multiple GPUs, you will need to edit the CLI arguments passed to the nbody executable.
+e.g:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cat cuda-samples/Dockerfile
+FROM nvidia/cuda:9.0-base-ubuntu16.04
+
+RUN apt-get update &amp;&amp; apt-get install -y --no-install-recommends \
+        cuda-samples-$CUDA_PKG_VERSION &amp;&amp; \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /usr/local/cuda/samples/5_Simulations/nbody
+
+RUN make -j&quot;$(nproc)&quot;
+
+# Edit the numdevices option so that it can run on multiple devices
+CMD [&quot;./nbody&quot;, &quot;-benchmark&quot;, &quot;-i=10000&quot;, &quot;-numdevices=8&quot;]
+</pre></div>
+</div>
+</div>
+<div class="section" id="details">
+<h4><a class="toc-backref" href="#id12">Details</a><a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h4>
+<p>To learn more about the implementation details of containerizing MPS, you can look at the comments in the <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file.</p>
+<p>The following diagram summarizes the flow and the interactions for Docker Compose:</p>
+<a class="reference external image-reference" href="https://user-images.githubusercontent.com/3645581/46986109-7ae66900-d0a2-11e8-93ba-c571aae2c9b2.png"><img alt="mps on docker-compose" src="https://user-images.githubusercontent.com/3645581/46986109-7ae66900-d0a2-11e8-93ba-c571aae2c9b2.png" /></a>
+</div>
+</div>
+</div>
+<div class="section" id="internals-of-the-nvidia-container-toolkit">
+<h2><a class="toc-backref" href="#id13">Internals of the NVIDIA Container Toolkit</a><a class="headerlink" href="#internals-of-the-nvidia-container-toolkit" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="challenges">
+<h3><a class="toc-backref" href="#id14">Challenges</a><a class="headerlink" href="#challenges" title="Permalink to this headline">¶</a></h3>
+<p>In order to execute a GPU application on your machine, you need to have the NVIDIA driver installed. The NVIDIA driver is composed of multiple kernel modules:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ lsmod | grep nvidia
+nvidia_uvm            711531  2
+nvidia_modeset        742329  0
+nvidia              10058469  80 nvidia_modeset,nvidia_uvm
+</pre></div>
+</div>
+<p>It also provides a collection of user-level driver libraries and utility binaries (such as <code class="docutils literal notranslate"><span class="pre">nvidia-smi</span></code> and <code class="docutils literal notranslate"><span class="pre">nvidia-modprobe</span></code> that enable your application to communicate with the kernel modules and therefore the GPU devices:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ldconfig -p | grep -E &#39;nvidia|cuda&#39;
+libnvidia-ml.so (libc6,x86-64) =&gt; /usr/lib/nvidia-361/libnvidia-ml.so
+libnvidia-glcore.so.361.48 (libc6,x86-64) =&gt; /usr/lib/nvidia-361/libnvidia-glcore.so.361.48
+libnvidia-compiler.so.361.48 (libc6,x86-64) =&gt; /usr/lib/nvidia-361/libnvidia-compiler.so.361.48
+libcuda.so (libc6,x86-64) =&gt; /usr/lib/x86_64-linux-gnu/libcuda.so
+...
+</pre></div>
+</div>
+<p>These libraries are tied to the driver version. This means that each driver version provides its own set of user-level libraries. Additionally note that these libraries are not backwards or forward compatible with the driver. This means you cannot use the libraries provided by driver 400.X with driver 500.X.</p>
+<p>One of the early idea for containerizing GPU applications was to install the user-level driver libraries inside the container (for instance using option <code class="docutils literal notranslate"><span class="pre">--no-kernel-module</span></code> from the driver installer) . However,  the user-level driver libraries are tied to the version of the kernel module and all Docker containers share the host OS kernel. The version of the kernel modules had to match <strong>exactly</strong> (major and minor version) the version of the user-level libraries. Trying to run a container with a mismatched environment would immediately yield an error inside the container:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ nvidia-smi
+Failed to initialize NVML: Driver/library version mismatch
+</pre></div>
+</div>
+<p>This approach made the images non-portable, making image sharing impossible and thus defeating of the main advantage of Docker.</p>
+<p>The solution the NVIDIA Contaner Toolkit provides is to make the images agnostic of the driver version at build time. At runtime, the images are then specified by mounting the user-level libraries from the host using the <a class="reference external" href="https://docs.docker.com/engine/reference/run/#volume-shared-filesystems">–volume</a> argument of <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code>.</p>
+<p>The NVIDIA driver supports multiple host OSes, there are multiple ways to install the driver (e.g. runfile or deb/rpm package) and the installer can also be customized. Across distributions, there is therefore no portable location for the driver files. The list of files to import can also depend on your driver version.</p>
+<p>GPUs are exposed as separate device files in <code class="docutils literal notranslate"><span class="pre">/dev</span></code>,  along with additional devices:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -l /dev/nvidia*
+crw-rw-rw- 1 root 195,   0 Apr 20 11:42 /dev/nvidia0
+crw-rw-rw- 1 root 195,   1 Apr 20 11:42 /dev/nvidia1
+crw-rw-rw- 1 root 195, 255 Apr 20 11:42 /dev/nvidiactl
+crw-rw-rw- 1 root 247,   0 Apr 20 11:42 /dev/nvidia-uvm
+</pre></div>
+</div>
+<p>Docker allows users to whitelist access to specific devices (using <a class="reference external" href="https://www.kernel.org/doc/Documentation/cgroup-v1/devices.txt">cgroups</a>) when starting a container by passing the argument ` <code class="docutils literal notranslate"><span class="pre">--device</span></code> &lt;<a class="reference external" href="https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities">https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities</a>&gt;`_ to <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code>. On a multi-GPUs machine, a common use case is to launch multiple jobs in parallel, each one using a subset of the available GPUs. The most basic solution is to use the environment variable <code class="docutils literal notranslate"><span class="pre">CUDA_VISIBLE_DEVICES</span></code>, but this doesn’t guarantee proper isolation. By using device whitelisting in Docker, you can restrict which GPUs a container will be able to access. For instance, container A is granted access to <code class="docutils literal notranslate"><span class="pre">/dev/nvidia0</span></code> while container B is granted access to <code class="docutils literal notranslate"><span class="pre">/dev/nvidia1</span></code>. Devices <code class="docutils literal notranslate"><span class="pre">/dev/nvidia-uvm</span></code> and <code class="docutils literal notranslate"><span class="pre">/dev/nvidiactl</span></code> do not correspond to a GPU and they must be accessible for all containers.</p>
+<p>The first challenge is to map the device files (or in other words, the minor number of the device) ordering to the PCI bus ordering (as reported by <code class="docutils literal notranslate"><span class="pre">nvidia-smi</span></code>). This is important when you have different models of GPUs on your machine and you want to assign a container to one GPU in particular. The GPU numbering reported by <code class="docutils literal notranslate"><span class="pre">nvidia-smi</span></code> doesn’t always match the minor number of the device file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ nvidia-smi -q
+GPU 0000:05:00.0
+ Minor Number: 3
+
+GPU 0000:06:00.0
+ Minor Number: 2
+</pre></div>
+</div>
+<p>The second challenge is related to the <code class="docutils literal notranslate"><span class="pre">nvidia_uvm</span></code> kernel module, it is not loaded automatically at boot time,  thus <code class="docutils literal notranslate"><span class="pre">/dev/nvidia-uvm</span></code> is not created and the container might have insufficient permission to load the kernel module itself. The kernel module must be manually loaded before starting any CUDA container.</p>
+</div>
+<div class="section" id="nvidia-docker">
+<h3><a class="toc-backref" href="#id15">nvidia-docker</a><a class="headerlink" href="#nvidia-docker" title="Permalink to this headline">¶</a></h3>
+<p>GPUs are enumerated using function <code class="docutils literal notranslate"><span class="pre">nvmlDeviceGetCount</span></code> from the <a class="reference external" href="https://developer.nvidia.com/nvidia-management-library-nvml">NVML library</a> and the corresponding device minor is obtained with the function <code class="docutils literal notranslate"><span class="pre">nvmlDeviceGetMinorNumber</span></code>. If the device minor number is N, the device file is simply /dev/nvidiaN.
+Isolation is controlled using the environment variable <code class="docutils literal notranslate"><span class="pre">NV_GPU</span></code>, by passing the indices of the GPUs to isolate, for instance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ NV_GPU=0,1 nvidia-docker run -ti nvidia/cuda nvidia-smi
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">nvidia-docker</span></code> wrapper will find the corresponding device files and add the <code class="docutils literal notranslate"><span class="pre">--device</span></code> arguments to the command-line before passing control to <code class="docutils literal notranslate"><span class="pre">docker</span></code>.</p>
+<p>To manually load <code class="docutils literal notranslate"><span class="pre">nvidia_uvm</span></code> and create <code class="docutils literal notranslate"><span class="pre">/dev/nvidia-uvm</span></code>, we use the command <code class="docutils literal notranslate"><span class="pre">nvidia-modprobe</span> <span class="pre">-u</span> <span class="pre">-c=0</span></code> on the host when starting the <code class="docutils literal notranslate"><span class="pre">nvidia-docker-plugin</span></code> daemon.</p>
+</div>
+<div class="section" id="alternatives">
+<h3><a class="toc-backref" href="#id16">Alternatives</a><a class="headerlink" href="#alternatives" title="Permalink to this headline">¶</a></h3>
+<p>If you don’t want to use the <code class="docutils literal notranslate"><span class="pre">nvidia-docker</span></code> wrapper, you can add the command-line arguments manually:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ docker run --device=/dev/nvidiactl --device=/dev/nvidia-uvm --device=/dev/nvidia0
+`
+</pre></div>
+</div>
+<p>This needs to be used in combination with the command-line arguments for mounting the volume containing the the user-level driver libraries.
+Listing the available GPUs can be done using <code class="docutils literal notranslate"><span class="pre">nvmlDeviceGetCount</span></code> from NVML or <code class="docutils literal notranslate"><span class="pre">cudaGetDeviceCount</span></code> from the CUDA API. We recommend using NVML since it also provides <code class="docutils literal notranslate"><span class="pre">nvmlDeviceGetMinorNumber</span></code> to find the device file to mount. Having a correct mapping between the device file and the isolated GPU is essential if you want to gather utilization metrics using NVML or nvidia-smi. If you still want to use the CUDA API, be sure to unset the environment variable <code class="docutils literal notranslate"><span class="pre">CUDA_VISIBLE_DEVICES</span></code>, otherwise some GPUs on the system might not be listed.</p>
+<p>To load <code class="docutils literal notranslate"><span class="pre">nvidia_uvm</span></code>, you should also use <code class="docutils literal notranslate"><span class="pre">nvidia-modprobe</span> <span class="pre">-u</span> <span class="pre">-c=0</span></code> if available. If it’s not, you need to do the <code class="docutils literal notranslate"><span class="pre">mknod</span></code> <a class="reference external" href="http://docs.nvidia.com/cuda/cuda-getting-started-guide-for-linux/#runfile-verifications">manually</a>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="faq.html" class="btn btn-neutral float-right" title="Frequently Asked Questions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="jetson.html" class="btn btn-neutral float-left" title="NVIDIA Container Runtime on Jetson (Beta)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, NVIDIA Corporation
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

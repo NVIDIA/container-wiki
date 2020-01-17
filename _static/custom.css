@@ -5,3 +5,8 @@ h3 {
 .rst-content .section ul p {
 	margin-bottom: 0px;
 }
+
+.wy-nav-content {
+	max-width: none;
+}
+

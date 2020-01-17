@@ -1,0 +1,578 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>NVIDIA Container Runtime on Jetson (Beta) &mdash; Cloud Native Products  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Advanced Usage" href="advanced-usage.html" />
+    <link rel="prev" title="Container images" href="container-images.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Cloud Native Products
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">NVIDIA Container Toolkit</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#what-is-docker">What is Docker?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#benefits-of-gpu-containerization">Benefits of GPU containerization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#background-of-the-nvidia-container-toolkit">Background of the NVIDIA Container Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#prerequisites-of-the-nvidia-container-toolkit">Prerequisites of the NVIDIA Container Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#installation-of-the-nvidia-container-toolkit">Installation of the NVIDIA Container Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#usage-of-the-nvidia-container-toolkit">Usage of the NVIDIA Container Toolkit</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="container-images.html">Container images</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="container-images.html#using-cuda-images">Using CUDA images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="container-images.html#using-ngc-images">Using NGC images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="container-images.html#using-non-cuda-images">Using non-CUDA images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="container-images.html#writing-dockerfiles">Writing Dockerfiles</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">NVIDIA Container Runtime on Jetson (Beta)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hello-world">Hello-world!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-cuda-in-containers-on-jetson">Building CUDA in Containers on Jetson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#enabling-jetson-containers-on-an-x86-workstation-using-qemu">Enabling Jetson Containers on an x86 workstation (using qemu)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-jetson-containers-on-an-x86-workstation-using-qemu">Building Jetson Containers on an x86 workstation (using qemu)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#no-package-show-are-shown-in-dpkgs-output">No package show are shown in dpkg’s output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nvidia-docker2-package-is-missing-from-dpkgs-output">nvidia-docker2 package is missing from dpkg’s output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#docker-info-doesnt-show-the-nvidia-runtime">Docker info doesn’t show the NVIDIA runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generating-and-viewing-logs">Generating and viewing logs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usr-local-cuda-is-readonly">/usr/local/cuda is readonly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-or-building-a-container-on-x86-using-qemu-binfmt-misc-is-failing">Running or building a container on x86 (using qemu+binfmt_misc) is failing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mount-plugins">Mount Plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#supported-devices">Supported Devices</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced-usage.html">Advanced Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="advanced-usage.html#general-topics">General Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced-usage.html#nvidia-mps">NVIDIA MPS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced-usage.html#internals-of-the-nvidia-container-toolkit">Internals of the NVIDIA Container Toolkit</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#general-questions">General Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#container-runtime">Container Runtime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#container-images">Container images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#ecosystem-enablement">Ecosystem enablement</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="platform.html">Platform support Information</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="platform.html#linux-distribution-matrix">Linux Distribution Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="platform.html#additional-support-information">Additional Support Information</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deprecated.html">Deprecated Features, Software and Images</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deprecated.html#version-1-0">Version 1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deprecated.html#version-2-0">Version 2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deprecated.html#nvidia-caffe">NVIDIA Caffe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deprecated.html#nvidia-digits">NVIDIA DIGITS</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">NVIDIA GPU Operator</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gpu-operator/testing.html">Quality Assurance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gpu-operator/testing.html#tested-platforms">Tested Platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpu-operator/testing.html#end-to-end-stories">End to End Stories</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#as-a-cluster-i-want-to-be-able-to-install-the-gpu-operator-with-helm-kubernetes-ubuntu-and-docker">As a cluster, I want to be able to install the GPU Operator with helm, Kubernetes, Ubuntu and Docker.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#as-a-cluster-i-want-to-be-able-to-install-the-gpu-operator-with-helm-openshift-4-1-rhcos-and-crio">As a cluster, I want to be able to install the GPU Operator with helm, Openshift 4.1, RHCOS and CRIO.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#as-a-cluster-i-want-to-be-able-to-gather-gpu-metrics-after-installing-the-gpu-operator">As a cluster, I want to be able to gather GPU metrics after installing the GPU Operator.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#ipmi-msghandler-isn-t-loaded">ipmi_msghandler isn’t loaded</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#tainted-nodes">Tainted Nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#as-a-cluster-admin-i-want-to-ensure-that-the-gpu-operator-doesn-t-deploy-a-failing-monitoring-container">As a cluster admin, I want to ensure that the GPU Operator doesn’t deploy a failing monitoring container.</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gpu-operator/testing.html#key-performance-indicator">Key Performance Indicator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#quality-assurance-score-card">Quality Assurance Score Card</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#performance-score-card">Performance Score Card</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#security-score-card">Security Score Card</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu-operator/testing.html#bill-of-materials-score-card">Bill of Materials Score Card</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">NVIDIA Driver Container</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../driver/readme.html">Description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../driver/readme.html#requirements">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../driver/readme.html#configuration">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../driver/readme.html#examples">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../driver/readme.html#quickstart">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../driver/readme.html#ubuntu-18-04">Ubuntu 18.04</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../driver/readme.html#ubuntu-16-04">Ubuntu 16.04</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../driver/readme.html#centos-7">Centos 7</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../driver/readme.html#kubernetes-with-dockerd">Kubernetes with dockerd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../driver/readme.html#tags-available">Tags available</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Cloud Native Products</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>NVIDIA Container Runtime on Jetson (Beta)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/toolkit/jetson.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="nvidia-container-runtime-on-jetson-beta">
+<h1>NVIDIA Container Runtime on Jetson (Beta)<a class="headerlink" href="#nvidia-container-runtime-on-jetson-beta" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p><strong>*Starting with v4.2.1, NVIDIA JetPack includes a beta version of NVIDIA Container Runtime with Docker integration for the Jetson platform. This enables users to run GPU accelerated Deep Learning and HPC containers on Jetson devices.</strong>_</p>
+<p>The NVIDIA runtime enables graphics and video processing applications such as DeepStream to be run in containers on the Jetson platform. The purpose of this document is to provide users with steps on getting started with running Docker containers on Jetson using the NVIDIA runtime. The beta supports Jetson AGX Xavier, Jetson TX2 series, Jetson TX1, and Jetson Nano devices.</p>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>NVIDIA Container Runtime with Docker integration (via the <em>nvidia-docker2</em> packages) is included as part of <a class="reference external" href="https://developer.nvidia.com/embedded/jetpack">NVIDIA JetPack</a>. It is available for install via the <a class="reference external" href="https://docs.nvidia.com/sdk-manager/index.html">NVIDIA SDK Manager</a> along with other JetPack components as shown below in Figure 1. Note that the version of JetPack would vary depending on the version being installed.</p>
+<a class="reference external image-reference" href="https://lh3.googleusercontent.com/_IrW289rk7TV-KjJNcxc8RZxoAyBjaoyjAxSBTTbYK97izactu5UhTgRsw3kFO8widR_Ze_R1UjgSqHpcenVL3rBB8y9qd5NkSb8Ciw6G4i3lMCzQ4HbTjpwhDclM7LWMp4I-c_9"><img alt="" src="https://lh3.googleusercontent.com/_IrW289rk7TV-KjJNcxc8RZxoAyBjaoyjAxSBTTbYK97izactu5UhTgRsw3kFO8widR_Ze_R1UjgSqHpcenVL3rBB8y9qd5NkSb8Ciw6G4i3lMCzQ4HbTjpwhDclM7LWMp4I-c_9" /></a>
+<p><em>Figure 1: Jetpack Installation step 2</em></p>
+<p>After JetPack is installed to your Jetson device, you can check that the NVIDIA Container Runtime is installed by running the following commands:</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span>$ sudo dpkg --get-selections | grep nvidia
+libnvidia-container-tools           install
+libnvidia-container0:arm64          install
+nvidia-container-runtime            install
+nvidia-container-runtime-hook       install
+nvidia-docker2              install
+
+$ sudo docker info | grep nvidia
+<span class="gi">+ Runtimes: nvidia runc</span>
+</pre></div>
+</div>
+<p>If you don’t see the packages in the first command or if you don’t see the runtime head to the Troubleshooting section.</p>
+</div>
+<div class="section" id="hello-world">
+<h2>Hello-world!<a class="headerlink" href="#hello-world" title="Permalink to this headline">¶</a></h2>
+<p>Once done with the installation process, let’s go ahead and create a cool graphics application. Users have access to an L4T base container image from NGC for Jetson available <a class="reference external" href="https://ngc.nvidia.com/catalog/containers/nvidia:l4t-base">here</a>.</p>
+<p>Users can extend this base image to build their own containers for use on Jetson devices. In this example, we will run a simple N-body simulation using the CUDA nbody sample. Since this sample requires access to the X server, an additional step is required as shown below before running the container.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Allow containers to communicate with Xorg
+$ sudo xhost +si:localuser:root
+$ sudo docker run --runtime nvidia --network host -it -e DISPLAY=$DISPLAY -v /tmp/.X11-unix/:/tmp/.X11-unix nvcr.io/nvidia/l4t-base:r32.3.1
+
+root@nano:/# apt-get update &amp;&amp; apt-get install -y --no-install-recommends make g++
+root@nano:/# cp -r /usr/local/cuda/samples /tmp
+root@nano:/# cd /tmp/samples/5_Simulations/nbody
+root@nano:/# make
+root@nano:/# ./nbody
+</pre></div>
+</div>
+<p>You should see the following result:</p>
+<a class="reference external image-reference" href="https://lh3.googleusercontent.com/i2W0kbAvSi-qqeD4VxK44gXH2N0svJz2GBM9cRFoLoDNuNtTV9ruYQv_EUFwZZQEI30xJyouxdkHYVFAkR8I7I23zN9JrHG9_tNnOnaqYsV3swTpjxPj2CcUBaAN0nLR2dFoE8Ht"><img alt="" src="https://lh3.googleusercontent.com/i2W0kbAvSi-qqeD4VxK44gXH2N0svJz2GBM9cRFoLoDNuNtTV9ruYQv_EUFwZZQEI30xJyouxdkHYVFAkR8I7I23zN9JrHG9_tNnOnaqYsV3swTpjxPj2CcUBaAN0nLR2dFoE8Ht" /></a>
+</div>
+<div class="section" id="building-cuda-in-containers-on-jetson">
+<h2>Building CUDA in Containers on Jetson<a class="headerlink" href="#building-cuda-in-containers-on-jetson" title="Permalink to this headline">¶</a></h2>
+<p>Docker gives you the ability to build containers using the “docker build” command. Let’s start with an example of how to do that on your Jetson device:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ mkdir /tmp/docker-build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> /tmp/docker-build
+$ cp -r /usr/local/cuda/samples/ ./
+$ tee ./Dockerfile <span class="s">&lt;&lt;EOF</span>
+<span class="s">FROM nvcr.io/nvidia/l4t-base:r32.3.1</span>
+
+<span class="s">RUN apt-get update &amp;&amp; apt-get install -y --no-install-recommends make g++</span>
+<span class="s">COPY ./samples /tmp/samples</span>
+
+<span class="s">WORKDIR /tmp/samples/1_Utilities/deviceQuery</span>
+<span class="s">RUN make clean &amp;&amp; make</span>
+
+<span class="s">CMD [&quot;./deviceQuery&quot;]</span>
+<span class="s">EOF</span>
+
+$ sudo docker build -t devicequery .
+$ sudo docker run -it --runtime nvidia devicequery
+
+CUDA Device Query <span class="o">(</span>Runtime API<span class="o">)</span> version <span class="o">(</span>CUDART static linking<span class="o">)</span>
+
+Detected <span class="m">1</span> CUDA Capable device<span class="o">(</span>s<span class="o">)</span>
+
+Device <span class="m">0</span>: <span class="s2">&quot;Xavier&quot;</span>
+  CUDA Driver Version / Runtime Version          <span class="m">10</span>.0 / <span class="m">10</span>.0
+  CUDA Capability Major/Minor version number:    <span class="m">7</span>.2
+  Total amount of global memory:                 <span class="m">15692</span> MBytes <span class="o">(</span><span class="m">16454430720</span> bytes<span class="o">)</span>
+  <span class="o">(</span> <span class="m">8</span><span class="o">)</span> Multiprocessors, <span class="o">(</span> <span class="m">64</span><span class="o">)</span> CUDA Cores/MP:     <span class="m">512</span> CUDA Cores
+  GPU Max Clock rate:                            <span class="m">1500</span> MHz <span class="o">(</span><span class="m">1</span>.50 GHz<span class="o">)</span>
+  Memory Clock rate:                             <span class="m">1377</span> Mhz
+  Memory Bus Width:                              <span class="m">256</span>-bit
+  L2 Cache Size:                                 <span class="m">524288</span> bytes
+...
+
+deviceQuery, CUDA <span class="nv">Driver</span> <span class="o">=</span> CUDART, CUDA Driver <span class="nv">Version</span> <span class="o">=</span> <span class="m">10</span>.0, CUDA Runtime <span class="nv">Version</span> <span class="o">=</span> <span class="m">10</span>.0, <span class="nv">NumDevs</span> <span class="o">=</span> <span class="m">1</span>
+<span class="nv">Result</span> <span class="o">=</span> PASS
+</pre></div>
+</div>
+<p>Known limitation: The base l4t image doesn’t allow you to statically compile with all CUDA libraries. Only libcudadevrt.a and libcudart_static.a are included.</p>
+</div>
+<div class="section" id="enabling-jetson-containers-on-an-x86-workstation-using-qemu">
+<h2>Enabling Jetson Containers on an x86 workstation (using qemu)<a class="headerlink" href="#enabling-jetson-containers-on-an-x86-workstation-using-qemu" title="Permalink to this headline">¶</a></h2>
+<p>One of the very cool features that are now enabled is the ability to build Arm CUDA binaries on your x86 machine without needing a cross compiler.
+You can very easily run AArch64 containers on your x86 workstation by using qemu’s virtualization features. This section will go over the steps to enable that. The next section will go over the workflow that allows you to build on x86 and then run on Jetson.
+Installing the following packages should allow you to enable support for AArch64 containers on x86:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get install qemu binfmt-support qemu-user-static
+
+<span class="c1"># Check if the entries look good.</span>
+$ sudo cat /proc/sys/fs/binfmt_misc/status
+enabled
+
+<span class="c1"># See if /usr/bin/qemu-aarch64-static exists as one of the interpreters.</span>
+$ cat /proc/sys/fs/binfmt_misc/qemu-aarch64
+enabled
+interpreter /usr/bin/qemu-aarch64-static
+flags: OCF
+offset <span class="m">0</span>
+magic 7f454c460201010000000000000000000200b700
+mask ffffffffffffff00fffffffffffffffffeffffff
+</pre></div>
+</div>
+<p>Make sure the F flag is present, if not head to the troubleshooting section, as this will result in a failure to start the Jetson container.
+You’ll usually find errors in the form: exec user process caused “exec format error”</p>
+</div>
+<div class="section" id="building-jetson-containers-on-an-x86-workstation-using-qemu">
+<h2>Building Jetson Containers on an x86 workstation (using qemu)<a class="headerlink" href="#building-jetson-containers-on-an-x86-workstation-using-qemu" title="Permalink to this headline">¶</a></h2>
+<p>Now that you have the required setup, we can get to building an Arm CUDA application on x86. Simply copy your code inside your container and run nvcc.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir /tmp/docker-build &amp;&amp; cd /tmp/docker-build
+$ cp -r /usr/local/cuda/samples/ ./
+
+$ tee ./Dockerfile &lt;&lt;EOF
+FROM nvcr.io/nvidia/l4t-base:r32.3.1
+
+RUN apt-get update &amp;&amp; apt-get install -y --no-install-recommends make g++
+COPY ./samples /tmp/samples
+
+WORKDIR /tmp/samples/1_Utilities/deviceQuery
+RUN make clean &amp;&amp; make
+
+CMD [&quot;./deviceQuery&quot;]
+EOF
+
+$ sudo docker build -t docker://USERNAME/devicequery .
+$ sudo docker push docker://USERNAME/devicequery
+
+# On your Jetson enabled device:
+$ sudo docker run -it --runtime nvidia docker://USERNAME/devicequery
+
+CUDA Device Query (Runtime API) version (CUDART static linking)
+
+Detected 1 CUDA Capable device(s)
+
+Device 0: &quot;Xavier&quot;
+  CUDA Driver Version / Runtime Version          10.0 / 10.0
+  CUDA Capability Major/Minor version number:    7.2
+  Total amount of global memory:                 15692 MBytes (16454430720 bytes)
+  Memory Bus Width:                              256-bit
+  L2 Cache Size:                                 524288 bytes
+...
+
+deviceQuery, CUDA Driver = CUDART, CUDA Driver Version = 10.0, CUDA Runtime Version = 10.0, NumDevs = 1
+Result = PASS
+</pre></div>
+</div>
+<p>Alternatively you can get a shell running, mount your code inside the container and compile it.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo docker run -it -v /usr/local/cuda:/usr/local/cuda http://nvcr.io/nvidia/l4t-base:r32.3.1
+root@x86host:/# apt-get update &amp;&amp; apt-get install -y --no-install-recommends make g++
+root@x86host:/# cp -r /usr/local/cuda/samples /tmp
+root@x86host:/# cd /tmp/samples/5_Simulations/nbody
+root@x86host:/# make
+</pre></div>
+</div>
+<p>Known limitation: Unfortunately you won’t be able to run any binary that calls into the NVIDIA driver on the x86 host.</p>
+</div>
+<div class="section" id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="no-package-show-are-shown-in-dpkgs-output">
+<h3>No package show are shown in dpkg’s output<a class="headerlink" href="#no-package-show-are-shown-in-dpkgs-output" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span>$ sudo dpkg --get-selections | grep nvidia
+<span class="gd">- libnvidia-container-tools         install</span>
+<span class="gd">- libnvidia-container0:arm64            install</span>
+<span class="gd">- nvidia-container-runtime          install</span>
+<span class="gd">- nvidia-container-runtime-hook         install</span>
+<span class="gd">- nvidia-docker2                install</span>
+</pre></div>
+</div>
+<p>You need to reinstall the NVIDIA Container Runtime for Docker using the JetPack process. Make sure that no errors are shown in the UI.</p>
+</div>
+<div class="section" id="nvidia-docker2-package-is-missing-from-dpkgs-output">
+<h3>nvidia-docker2 package is missing from dpkg’s output<a class="headerlink" href="#nvidia-docker2-package-is-missing-from-dpkgs-output" title="Permalink to this headline">¶</a></h3>
+<p>You will need to manually register the runtime:</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span>$ sudo dpkg --get-selections | grep nvidia
+libnvidia-container-tools           install
+libnvidia-container0:arm64          install
+nvidia-container-runtime            install
+nvidia-container-runtime-hook           install
+<span class="gd">- nvidia-docker2                install</span>
+
+$ ls /etc/docker/daemon.json
+ls: cannot access &#39;/etc/docker/daemon.json&#39;: No such file or directory
+
+$ sudo tee /etc/docker/daemon.json &lt;&lt;EOF
+{
+    &quot;runtimes&quot;: {
+        &quot;nvidia&quot;: {
+            &quot;path&quot;: &quot;/usr/bin/nvidia-container-runtime&quot;,
+            &quot;runtimeArgs&quot;: []
+
+
+}
+EOF
+$ sudo pkill -SIGHUP dockerd
+</pre></div>
+</div>
+</div>
+<div class="section" id="docker-info-doesnt-show-the-nvidia-runtime">
+<h3>Docker info doesn’t show the NVIDIA runtime<a class="headerlink" href="#docker-info-doesnt-show-the-nvidia-runtime" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span>$ sudo docker info | grep nvidia
+
+$ sudo pkill -SIGHUP dockerd
+$ sudo docker info | grep nvidia
+<span class="gi">+ Runtimes: nvidia runc</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="generating-and-viewing-logs">
+<h3>Generating and viewing logs<a class="headerlink" href="#generating-and-viewing-logs" title="Permalink to this headline">¶</a></h3>
+<p>You can enable logs by uncommenting the debug field in /etc/nvidia-container-runtime/config.toml</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ cat /etc/nvidia-container-runtime/config.toml
+disable-require <span class="o">=</span> <span class="nb">false</span>
+<span class="c1">#swarm-resource = &quot;DOCKER_RESOURCE_GPU&quot;</span>
+
+<span class="o">[</span>nvidia-container-cli<span class="o">]</span>
+<span class="c1">#root = &quot;/run/nvidia/driver&quot;</span>
+<span class="c1">#path = &quot;/usr/bin/nvidia-container-cli&quot;</span>
+<span class="nv">environment</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;PATH=/tmp&quot;</span><span class="o">]</span>
+<span class="nv">debug</span> <span class="o">=</span> <span class="s2">&quot;/var/log/nvidia-container-runtime-hook.log&quot;</span>
+<span class="c1">#ldcache = &quot;/etc/ld.so.cache&quot;</span>
+load-kmods <span class="o">=</span> <span class="nb">true</span>
+<span class="c1">#no-cgroups = false</span>
+<span class="c1">#user = &quot;root:video&quot;</span>
+<span class="nv">ldconfig</span> <span class="o">=</span> <span class="s2">&quot;@/sbin/ldconfig.real&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="usr-local-cuda-is-readonly">
+<h3>/usr/local/cuda is readonly<a class="headerlink" href="#usr-local-cuda-is-readonly" title="Permalink to this headline">¶</a></h3>
+<p>One of the limitations of the beta is that we are mounting the cuda directory from the host. This was done with size in mind as a development CUDA container weighs 3GB, on Nano it’s not always possible to afford such a huge cost. We are currently working towards creating smaller CUDA containers.</p>
+</div>
+<div class="section" id="running-or-building-a-container-on-x86-using-qemu-binfmt-misc-is-failing">
+<h3>Running or building a container on x86 (using qemu+binfmt_misc) is failing<a class="headerlink" href="#running-or-building-a-container-on-x86-using-qemu-binfmt-misc-is-failing" title="Permalink to this headline">¶</a></h3>
+<p>The container does not start (hangs) or there is an error saying ‘exec format error’. Check if the interpreter is available to the containers.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># See if /usr/bin/qemu-aarch64-static exists as one of the interpreters.</span>
+$ cat /proc/sys/fs/binfmt_misc/qemu-aarch64
+enabled
+interpreter /usr/bin/qemu-aarch64-static
+flags: OCF
+offset <span class="m">0</span>
+magic 7f454c460201010000000000000000000200b700
+mask ffffffffffffff00fffffffffffffffffeffffff
+</pre></div>
+</div>
+<p>If the flags does not include ‘F’ then the kernel is loading the interpreter lazily. The easiest fix is to have the binfmt-support package version &gt;= 2.1.7, which automatically includes the –fix-binary (F) option. The other option is to run containers with /usr/bin/qemu-aarch64-static mounted inside the container:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># volume mount /usr/bin/qemu-aarch64-static
+docker run -it -v /usr/bin/qemu-aarch64-static:/usr/bin/qemu-aarch64-static -v /usr/local/cuda:/usr/local/cuda http://nvcr.io/nvidia/l4t-base:r32.3.1
+If running `docker build`; perhaps a better option is to use ‘podman’ (https://podman.io/) instead. Install podman on the system and run `podmand build` with `-v /usr/bin/qemu-aarch64-static:/usr/bin/qemu-aarch64-static`. Example:
+# volume mount /usr/bin/qemu-aarch64-static
+sudo podman build -v /usr/bin/qemu-aarch64-static:/usr/bin/qemu-aarch64-static -t &lt;image_tag&gt; .
+</pre></div>
+</div>
+</div>
+<div class="section" id="mount-plugins">
+<h3>Mount Plugins<a class="headerlink" href="#mount-plugins" title="Permalink to this headline">¶</a></h3>
+<p>The NVIDIA software stack, so that it can ultimately run GPU code, talks to the NVIDIA driver through a number of userland libraries (e.g: libcuda.so). Because the driver API is not stable, these libraries are shipped and installed by the NVIDIA driver.</p>
+<p>In effect, what that means is that having a container which contains these libraries, ties it to the driver version it was built and ran against. Therefore moving that container to another machine becomes impossible. The approach we decided to take is to mount, at runtime, these libraries from your host filesystem into your container.</p>
+<p>Internally the NVIDIA Container Runtime stack uses a plugin system to specify what files may be mounted from the host to the container. You can learn more about this system here: <a class="reference external" href="https://github.com/NVIDIA/libnvidia-container/blob/jetson/design/mount_plugins.md">https://github.com/NVIDIA/libnvidia-container/blob/jetson/design/mount_plugins.md</a></p>
+</div>
+<div class="section" id="supported-devices">
+<h3>Supported Devices<a class="headerlink" href="#supported-devices" title="Permalink to this headline">¶</a></h3>
+<p>The nvidia container runtime exposes select device nodes from the host to container required to enable the following functionality within containers:</p>
+<ul class="simple">
+<li><p>frame buffer</p></li>
+<li><p>video decode (nvdec)</p></li>
+<li><p>video encode (msenc)</p></li>
+<li><p>color space conversion &amp; scaling (vic)</p></li>
+<li><p>CUDA &amp; TensorRT (through various nvhost devices)</p></li>
+<li><p>Deep learning accelerator (DLA)</p></li>
+<li><p>display (based on for eglsink, 3dsink, overlaysink)</p></li>
+</ul>
+<p>Note that the decode, encode, vic and display functionality can be accessed from software using the associated gstreamer plugins available as part of the GStreamer version 1.0 based accelerated solution in L4T.</p>
+<p>In terms of camera input, USB and CSI cameras are supported. In order to access cameras from inside the container, the user needs to mount the device node that gets dynamically created when a camera is plugged in – eg: /dev/video0. This can be accomplished using the –device option supported by docker as documented here: <a class="reference external" href="https://docs.docker.com/engine/reference/commandline/run/#add-host-device-to-container---device">https://docs.docker.com/engine/reference/commandline/run/#add-host-device-to-container—device</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="advanced-usage.html" class="btn btn-neutral float-right" title="Advanced Usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="container-images.html" class="btn btn-neutral float-left" title="Container images" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, NVIDIA Corporation
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

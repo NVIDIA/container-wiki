@@ -27,3 +27,9 @@ This wiki provides tutorials on how to use these tools, references on the archit
    :caption: NVIDIA GPU Operator
 
    gpu-operator/testing.rst
+
+.. toctree::
+   :maxdepth: 1
+   :caption: NVIDIA Driver Container
+
+   driver/readme.rst

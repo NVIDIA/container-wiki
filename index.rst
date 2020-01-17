@@ -23,13 +23,13 @@ This wiki provides tutorials on how to use these tools, references on the archit
    toolkit/deprecated.rst
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: NVIDIA GPU Operator
 
    gpu-operator/testing.rst
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: NVIDIA Driver Container
 
    driver/readme.rst

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Quality Assurance &mdash; Cloud Native Products  documentation</title>
+  <title>Quickstart &mdash; Cloud Native Products  documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Quickstart" href="../driver/readme.html" />
-    <link rel="prev" title="GPU Monitoring" href="monitoring.html" /> 
+    <link rel="next" title="GPU Monitoring" href="monitoring.html" />
+    <link rel="prev" title="Deprecated Features, Software and Images" href="../toolkit/deprecated.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -147,13 +147,13 @@
 </ul>
 <p class="caption"><span class="caption-text">NVIDIA GPU Operator</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="quickstart.html#what-is-the-nvidia-gpu-operator">What is the NVIDIA GPU Operator?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quickstart.html#installation-of-the-gpu-operator">Installation of the GPU Operator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quickstart.html#running-a-sample-gpu-application">Running a Sample GPU Application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quickstart.html#platforms-supported">Platforms Supported</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quickstart.html#known-limitations">Known Limitations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quickstart.html#getting-help">Getting Help</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-the-nvidia-gpu-operator">What is the NVIDIA GPU Operator?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-of-the-gpu-operator">Installation of the GPU Operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-a-sample-gpu-application">Running a Sample GPU Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#platforms-supported">Platforms Supported</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#known-limitations">Known Limitations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-help">Getting Help</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="monitoring.html">GPU Monitoring</a><ul>
@@ -161,22 +161,22 @@
 <li class="toctree-l2"><a class="reference internal" href="monitoring.html#deploying-with-prometheus">Deploying with Prometheus</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Quality Assurance</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#tested-platforms">Tested Platforms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#end-to-end-stories">End to End Stories</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#as-a-cluster-admin-i-want-to-be-able-to-install-the-gpu-operator-with-helm-kubernetes-ubuntu-and-docker">As a cluster admin, I want to be able to install the GPU Operator with helm, Kubernetes, Ubuntu and Docker.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#as-a-cluster-admin-i-want-to-be-able-to-install-the-gpu-operator-with-helm-openshift-4-1-rhcos-and-crio">As a cluster admin, I want to be able to install the GPU Operator with helm, Openshift 4.1, RHCOS and CRIO.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#as-a-cluster-admin-i-want-to-be-able-to-gather-gpu-metrics-after-installing-the-gpu-operator">As a cluster admin, I want to be able to gather GPU metrics after installing the GPU Operator.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ipmi-msghandler-isn-t-loaded">ipmi_msghandler isn’t loaded</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#tainted-nodes">Tainted Nodes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#as-a-cluster-admin-i-want-to-ensure-that-the-gpu-operator-doesn-t-deploy-a-failing-monitoring-container">As a cluster admin, I want to ensure that the GPU Operator doesn’t deploy a failing monitoring container.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Quality Assurance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#tested-platforms">Tested Platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#end-to-end-stories">End to End Stories</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="testing.html#as-a-cluster-admin-i-want-to-be-able-to-install-the-gpu-operator-with-helm-kubernetes-ubuntu-and-docker">As a cluster admin, I want to be able to install the GPU Operator with helm, Kubernetes, Ubuntu and Docker.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="testing.html#as-a-cluster-admin-i-want-to-be-able-to-install-the-gpu-operator-with-helm-openshift-4-1-rhcos-and-crio">As a cluster admin, I want to be able to install the GPU Operator with helm, Openshift 4.1, RHCOS and CRIO.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="testing.html#as-a-cluster-admin-i-want-to-be-able-to-gather-gpu-metrics-after-installing-the-gpu-operator">As a cluster admin, I want to be able to gather GPU metrics after installing the GPU Operator.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="testing.html#ipmi-msghandler-isn-t-loaded">ipmi_msghandler isn’t loaded</a></li>
+<li class="toctree-l3"><a class="reference internal" href="testing.html#tainted-nodes">Tainted Nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="testing.html#as-a-cluster-admin-i-want-to-ensure-that-the-gpu-operator-doesn-t-deploy-a-failing-monitoring-container">As a cluster admin, I want to ensure that the GPU Operator doesn’t deploy a failing monitoring container.</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#key-performance-indicator">Key Performance Indicator</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#quality-assurance-score-card">Quality Assurance Score Card</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#performance-score-card">Performance Score Card</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#security-score-card">Security Score Card</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#bill-of-materials-score-card">Bill of Materials Score Card</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#key-performance-indicator">Key Performance Indicator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="testing.html#quality-assurance-score-card">Quality Assurance Score Card</a></li>
+<li class="toctree-l3"><a class="reference internal" href="testing.html#performance-score-card">Performance Score Card</a></li>
+<li class="toctree-l3"><a class="reference internal" href="testing.html#security-score-card">Security Score Card</a></li>
+<li class="toctree-l3"><a class="reference internal" href="testing.html#bill-of-materials-score-card">Bill of Materials Score Card</a></li>
 </ul>
 </li>
 </ul>
@@ -242,13 +242,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Quality Assurance</li>
+      <li>Quickstart</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/gpu-operator/testing.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/gpu-operator/quickstart.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -261,129 +261,116 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="quality-assurance">
-<h1>Quality Assurance<a class="headerlink" href="#quality-assurance" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="quickstart">
+<h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#tested-platforms" id="id1">Tested Platforms</a></p></li>
-<li><p><a class="reference internal" href="#end-to-end-stories" id="id2">End to End Stories</a></p>
-<ul>
-<li><p><a class="reference internal" href="#as-a-cluster-admin-i-want-to-be-able-to-install-the-gpu-operator-with-helm-kubernetes-ubuntu-and-docker" id="id3">As a cluster admin, I want to be able to install the GPU Operator with helm, Kubernetes, Ubuntu and Docker.</a></p></li>
-<li><p><a class="reference internal" href="#as-a-cluster-admin-i-want-to-be-able-to-install-the-gpu-operator-with-helm-openshift-4-1-rhcos-and-crio" id="id4">As a cluster admin, I want to be able to install the GPU Operator with helm, Openshift 4.1, RHCOS and CRIO.</a></p></li>
-<li><p><a class="reference internal" href="#as-a-cluster-admin-i-want-to-be-able-to-gather-gpu-metrics-after-installing-the-gpu-operator" id="id5">As a cluster admin, I want to be able to gather GPU metrics after installing the GPU Operator.</a></p></li>
-<li><p><a class="reference internal" href="#ipmi-msghandler-isn-t-loaded" id="id6">ipmi_msghandler isn’t loaded</a></p></li>
-<li><p><a class="reference internal" href="#tainted-nodes" id="id7">Tainted Nodes</a></p></li>
-<li><p><a class="reference internal" href="#as-a-cluster-admin-i-want-to-ensure-that-the-gpu-operator-doesn-t-deploy-a-failing-monitoring-container" id="id8">As a cluster admin, I want to ensure that the GPU Operator doesn’t deploy a failing monitoring container.</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#key-performance-indicator" id="id9">Key Performance Indicator</a></p>
-<ul>
-<li><p><a class="reference internal" href="#quality-assurance-score-card" id="id10">Quality Assurance Score Card</a></p></li>
-<li><p><a class="reference internal" href="#performance-score-card" id="id11">Performance Score Card</a></p></li>
-<li><p><a class="reference internal" href="#security-score-card" id="id12">Security Score Card</a></p></li>
-<li><p><a class="reference internal" href="#bill-of-materials-score-card" id="id13">Bill of Materials Score Card</a></p></li>
-</ul>
-</li>
+<li><p><a class="reference internal" href="#what-is-the-nvidia-gpu-operator" id="id1">What is the NVIDIA GPU Operator?</a></p></li>
+<li><p><a class="reference internal" href="#installation-of-the-gpu-operator" id="id2">Installation of the GPU Operator</a></p></li>
+<li><p><a class="reference internal" href="#running-a-sample-gpu-application" id="id3">Running a Sample GPU Application</a></p></li>
+<li><p><a class="reference internal" href="#platforms-supported" id="id4">Platforms Supported</a></p></li>
+<li><p><a class="reference internal" href="#known-limitations" id="id5">Known Limitations</a></p></li>
+<li><p><a class="reference internal" href="#getting-help" id="id6">Getting Help</a></p></li>
 </ul>
 </div>
-<div class="section" id="tested-platforms">
-<h2><a class="toc-backref" href="#id1">Tested Platforms</a><a class="headerlink" href="#tested-platforms" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-is-the-nvidia-gpu-operator">
+<h2><a class="toc-backref" href="#id1">What is the NVIDIA GPU Operator?</a><a class="headerlink" href="#what-is-the-nvidia-gpu-operator" title="Permalink to this headline">¶</a></h2>
+<p>The GPU operator manages NVIDIA GPU resources in a Kubernetes cluster.
+It allows to and automates tasks related to bootstrapping GPU nodes.</p>
+<p>GPUs are a special resource in the cluster, and require a few components to be present
+before application workloads can be deployed onto the GPU.
+These components include the NVIDIA drivers (to enable CUDA), Kubernetes device plugin,
+the container runtime and others such as automatic node labelling, monitoring etc.</p>
+<p>This is a technical preview release of the GPU operator. The operator can be deployed using a Helm chart.</p>
+</div>
+<div class="section" id="installation-of-the-gpu-operator">
+<h2><a class="toc-backref" href="#id2">Installation of the GPU Operator</a><a class="headerlink" href="#installation-of-the-gpu-operator" title="Permalink to this headline">¶</a></h2>
+<p>Ensure the following prerequisites are met:</p>
 <ul class="simple">
-<li><p>Vanilla Kubernetes, 1 Tesla GPU node - AWS.</p></li>
-<li><p>Vanilla Kubernetes, 1 Tesla GPU node - Ubuntu 18.04.</p></li>
-<li><p>Openshift 4.1, 3 CPU nodes and 2 RHCOS Tesla GPU node.</p></li>
+<li><p>Nodes must not be pre-configured with NVIDIA components (driver, container runtime, device plugin).</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">i2c_core</span></code> and <code class="docutils literal notranslate"><span class="pre">ipmi_msghandler</span></code> kernel modules need to be loaded</p></li>
 </ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ curl -L https://git.io/get_helm.sh <span class="p">|</span> bash
+$ helm version
+version.BuildInfo<span class="o">{</span>Version:<span class="s2">&quot;v3.0.2&quot;</span>, GitCommit:<span class="s2">&quot;19e47ee3283ae98139d98460de796c1be1e3975f&quot;</span>, GitTreeState:<span class="s2">&quot;clean&quot;</span>, GoVersion:<span class="s2">&quot;go1.13.5&quot;</span><span class="o">}</span>
+
+$ helm repo add nvidia https://nvidia.github.io/gpu-operator
+$ helm repo update
+
+$ helm install --devel nvidia/gpu-operator --generate-name
+
+<span class="c1"># To check the gpu-operator version</span>
+$ helm ls
+</pre></div>
 </div>
-<div class="section" id="end-to-end-stories">
-<h2><a class="toc-backref" href="#id2">End to End Stories</a><a class="headerlink" href="#end-to-end-stories" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="as-a-cluster-admin-i-want-to-be-able-to-install-the-gpu-operator-with-helm-kubernetes-ubuntu-and-docker">
-<h3><a class="toc-backref" href="#id3">As a cluster admin, I want to be able to install the GPU Operator with helm, Kubernetes, Ubuntu and Docker.</a><a class="headerlink" href="#as-a-cluster-admin-i-want-to-be-able-to-install-the-gpu-operator-with-helm-kubernetes-ubuntu-and-docker" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="running-a-sample-gpu-application">
+<h2><a class="toc-backref" href="#id3">Running a Sample GPU Application</a><a class="headerlink" href="#running-a-sample-gpu-application" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a tensorflow notebook example</span>
+$ kubectl apply -f https://nvidia.github.io/gpu-operator/notebook-example.yml
+
+<span class="c1"># Grab the token from the pod once it is created</span>
+$ kubectl get pod tf-notebook
+$ kubectl logs tf-notebook
+...
+<span class="o">[</span>I <span class="m">23</span>:20:42.891 NotebookApp<span class="o">]</span> jupyter_tensorboard extension loaded.
+<span class="o">[</span>I <span class="m">23</span>:20:42.926 NotebookApp<span class="o">]</span> JupyterLab alpha preview extension loaded from /opt/conda/lib/python3.6/site-packages/jupyterlab
+JupyterLab v0.24.1
+Known labextensions:
+<span class="o">[</span>I <span class="m">23</span>:20:42.933 NotebookApp<span class="o">]</span> Serving notebooks from <span class="nb">local</span> directory: /home/jovyan
+
+   Copy/paste this URL into your browser when you connect <span class="k">for</span> the first time,
+       to login with a token:
+          http://localhost:8888/?token<span class="o">=</span>MY_TOKEN
+You can now access the notebook on http://localhost:30001/?token<span class="o">=</span>MY_TOKEN
+</pre></div>
+</div>
+</div>
+<div class="section" id="platforms-supported">
+<h2><a class="toc-backref" href="#id4">Platforms Supported</a><a class="headerlink" href="#platforms-supported" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>What</p></th>
+<th class="head"><p>Supported</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>GPUs</p></td>
+<td><p>Pascal+ (including Tesla V100 and T4)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ubuntu</p></td>
+<td><p>18.04.3 LTS</p></td>
+</tr>
+<tr class="row-even"><td><p>RHCOS</p></td>
+<td><p>rhcos4.1+</p></td>
+</tr>
+<tr class="row-odd"><td><p>Kubernetes</p></td>
+<td><p>v1.13+</p></td>
+</tr>
+<tr class="row-even"><td><p>Openshift</p></td>
+<td><p>v4.1+</p></td>
+</tr>
+<tr class="row-odd"><td><p>Helm</p></td>
+<td><p>v2+</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="known-limitations">
+<h2><a class="toc-backref" href="#id5">Known Limitations</a><a class="headerlink" href="#known-limitations" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Validate that all pods are running.</p></li>
-<li><p>Validate that we can run a CUDA application.</p></li>
-<li><p>Validate that we can run a Tensorflow notebook.</p></li>
+<li><p>GPU Operator will fail on nodes already setup with NVIDIA components (driver, runtime, device plugin).</p></li>
+<li><p>Removing the GPU Operator will require you to reboot your nodes.</p></li>
 </ul>
 </div>
-<div class="section" id="as-a-cluster-admin-i-want-to-be-able-to-install-the-gpu-operator-with-helm-openshift-4-1-rhcos-and-crio">
-<h3><a class="toc-backref" href="#id4">As a cluster admin, I want to be able to install the GPU Operator with helm, Openshift 4.1, RHCOS and CRIO.</a><a class="headerlink" href="#as-a-cluster-admin-i-want-to-be-able-to-install-the-gpu-operator-with-helm-openshift-4-1-rhcos-and-crio" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Validate that all pods are running.</p></li>
-<li><p>Validate that we can run a CUDA application.</p></li>
-<li><p>Validate that we can run a Tensorflow notebook.</p></li>
-</ul>
-</div>
-<div class="section" id="as-a-cluster-admin-i-want-to-be-able-to-gather-gpu-metrics-after-installing-the-gpu-operator">
-<h3><a class="toc-backref" href="#id5">As a cluster admin, I want to be able to gather GPU metrics after installing the GPU Operator.</a><a class="headerlink" href="#as-a-cluster-admin-i-want-to-be-able-to-gather-gpu-metrics-after-installing-the-gpu-operator" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Validate that we can gather metrics.</p></li>
-<li><p>Validate that we can plug the GPU metrics in something like Grafana or prometheus. Is it validating instructions and/or is this automatable? Probably not.</p></li>
-</ul>
-</div>
-<div class="section" id="ipmi-msghandler-isn-t-loaded">
-<h3><a class="toc-backref" href="#id6">ipmi_msghandler isn’t loaded</a><a class="headerlink" href="#ipmi-msghandler-isn-t-loaded" title="Permalink to this headline">¶</a></h3>
-<p>As a cluster admin, I want to ensure that CPU nodes are not configured by the GPU Operator.**
-* Validate that all pods in the <cite>gpu-operator-resources</cite> have the GPU label requirement</p>
-</div>
-<div class="section" id="tainted-nodes">
-<h3><a class="toc-backref" href="#id7">Tainted Nodes</a><a class="headerlink" href="#tainted-nodes" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="as-a-cluster-admin-i-want-to-ensure-that-the-gpu-operator-doesn-t-deploy-a-failing-monitoring-container">
-<h3><a class="toc-backref" href="#id8">As a cluster admin, I want to ensure that the GPU Operator doesn’t deploy a failing monitoring container.</a><a class="headerlink" href="#as-a-cluster-admin-i-want-to-ensure-that-the-gpu-operator-doesn-t-deploy-a-failing-monitoring-container" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Validate that dcgm doesn’t get deployed on Openshift &lt;= 4.2</p></li>
-</ul>
-</div>
-</div>
-<div class="section" id="key-performance-indicator">
-<h2><a class="toc-backref" href="#id9">Key Performance Indicator</a><a class="headerlink" href="#key-performance-indicator" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="quality-assurance-score-card">
-<h3><a class="toc-backref" href="#id10">Quality Assurance Score Card</a><a class="headerlink" href="#quality-assurance-score-card" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Number of E2E Tests</p></li>
-<li><p>Unit Tests Coverage</p></li>
-<li><p>Number of Manual Tests / Number of Tests</p></li>
-<li><p>Number of Automated Tests / Number of Tests</p></li>
-<li><p>Number of user stories covered / Number of stories written</p></li>
-<li><p>Number of regression tests</p></li>
-<li><p>[REJECTED] Burndown Rate: rejected because the amount of work required is to high.</p></li>
-</ul>
-</div>
-<div class="section" id="performance-score-card">
-<h3><a class="toc-backref" href="#id11">Performance Score Card</a><a class="headerlink" href="#performance-score-card" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Installation Time</p></li>
-<li><p>Scalability of the GPU Operator</p></li>
-<li><p>Memory Consumption</p></li>
-<li><p>CPU Consumption</p></li>
-<li><p>Network Consumption (kb/minute)</p></li>
-</ul>
-</div>
-<div class="section" id="security-score-card">
-<h3><a class="toc-backref" href="#id12">Security Score Card</a><a class="headerlink" href="#security-score-card" title="Permalink to this headline">¶</a></h3>
-<p><strong>Best practices</strong></p>
-<ul class="simple">
-<li><p>Small surface (ports opened, software installed, permissions given)</p></li>
-<li><p>Container Best Practices (slim image, latest version)</p></li>
-<li><p>Bill of materials present</p></li>
-<li><p>Bonus: provide a link to a website that provides security information</p></li>
-<li><p>TBD</p></li>
-</ul>
-<p><strong>Threat modeling (-100)</strong></p>
-<p><strong>Automation in place</strong></p>
-<ul class="simple">
-<li><p>CVE Analysis</p></li>
-<li><p>Automated publication</p></li>
-</ul>
-</div>
-<div class="section" id="bill-of-materials-score-card">
-<h3><a class="toc-backref" href="#id13">Bill of Materials Score Card</a><a class="headerlink" href="#bill-of-materials-score-card" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Number of Dependencies</p></li>
-<li><p>Number of Licenses</p></li>
-<li><p>License Blacklist and Whitelist</p></li>
-</ul>
-</div>
+<div class="section" id="getting-help">
+<h2><a class="toc-backref" href="#id6">Getting Help</a><a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h2>
+<p>Please open <a class="reference external" href="https://github.com/NVIDIA/gpu-operator/issues/new">an issue on the GitHub project</a> for any questions. Your feedback is appreciated.</p>
 </div>
 </div>
 
@@ -395,10 +382,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../driver/readme.html" class="btn btn-neutral float-right" title="Quickstart" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="monitoring.html" class="btn btn-neutral float-right" title="GPU Monitoring" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="monitoring.html" class="btn btn-neutral float-left" title="GPU Monitoring" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../toolkit/deprecated.html" class="btn btn-neutral float-left" title="Deprecated Features, Software and Images" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

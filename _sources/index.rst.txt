@@ -26,6 +26,8 @@ This wiki provides tutorials on how to use these tools, references on the archit
    :maxdepth: 2
    :caption: NVIDIA GPU Operator
 
+   gpu-operator/quickstart.rst
+   gpu-operator/monitoring.rst
    gpu-operator/testing.rst
 
 .. toctree::

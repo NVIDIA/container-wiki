@@ -28,6 +28,7 @@ This wiki provides tutorials on how to use these tools, references on the archit
 
    gpu-operator/quickstart.rst
    gpu-operator/monitoring.rst
+   gpu-operator/release.rst
    gpu-operator/testing.rst
 
 .. toctree::
@@ -35,3 +36,9 @@ This wiki provides tutorials on how to use these tools, references on the archit
    :caption: NVIDIA Driver Container
 
    driver/readme.rst
+
+.. toctree::
+   :maxdepth: 2
+   :caption: NVIDIA Cloud Native Team Processes
+
+   process/planning.rst

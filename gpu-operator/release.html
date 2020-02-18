@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Quickstart &mdash; Cloud Native Products  documentation</title>
+  <title>Release Process and Phases &mdash; Cloud Native Products  documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="GPU Monitoring" href="monitoring.html" />
-    <link rel="prev" title="Deprecated Features, Software and Images" href="../toolkit/deprecated.html" /> 
+    <link rel="next" title="Quality Assurance" href="testing.html" />
+    <link rel="prev" title="GPU Monitoring" href="monitoring.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -147,13 +147,13 @@
 </ul>
 <p class="caption"><span class="caption-text">NVIDIA GPU Operator</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Quickstart</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#what-is-the-nvidia-gpu-operator">What is the NVIDIA GPU Operator?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#installation-of-the-gpu-operator">Installation of the GPU Operator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#running-a-sample-gpu-application">Running a Sample GPU Application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#platforms-supported">Platforms Supported</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#known-limitations">Known Limitations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#getting-help">Getting Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#what-is-the-nvidia-gpu-operator">What is the NVIDIA GPU Operator?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#installation-of-the-gpu-operator">Installation of the GPU Operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#running-a-sample-gpu-application">Running a Sample GPU Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#platforms-supported">Platforms Supported</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#known-limitations">Known Limitations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#getting-help">Getting Help</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="monitoring.html">GPU Monitoring</a><ul>
@@ -161,10 +161,10 @@
 <li class="toctree-l2"><a class="reference internal" href="monitoring.html#deploying-with-prometheus">Deploying with Prometheus</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="release.html">Release Process and Phases</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="release.html#feature-planning-and-release">Feature Planning and Release</a></li>
-<li class="toctree-l2"><a class="reference internal" href="release.html#release-process-goals">Release Process Goals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="release.html#release-phases">Release Phases</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Release Process and Phases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#feature-planning-and-release">Feature Planning and Release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#release-process-goals">Release Process Goals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#release-phases">Release Phases</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="testing.html">Quality Assurance</a><ul>
@@ -256,13 +256,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Quickstart</li>
+      <li>Release Process and Phases</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/gpu-operator/quickstart.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/gpu-operator/release.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -275,116 +275,59 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="quickstart">
-<h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
-<div class="contents local topic" id="table-of-contents">
-<p class="topic-title">Table of Contents</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="#what-is-the-nvidia-gpu-operator" id="id1">What is the NVIDIA GPU Operator?</a></p></li>
-<li><p><a class="reference internal" href="#installation-of-the-gpu-operator" id="id2">Installation of the GPU Operator</a></p></li>
-<li><p><a class="reference internal" href="#running-a-sample-gpu-application" id="id3">Running a Sample GPU Application</a></p></li>
-<li><p><a class="reference internal" href="#platforms-supported" id="id4">Platforms Supported</a></p></li>
-<li><p><a class="reference internal" href="#known-limitations" id="id5">Known Limitations</a></p></li>
-<li><p><a class="reference internal" href="#getting-help" id="id6">Getting Help</a></p></li>
-</ul>
+  <div class="section" id="release-process-and-phases">
+<h1>Release Process and Phases<a class="headerlink" href="#release-process-and-phases" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="feature-planning-and-release">
+<h2>Feature Planning and Release<a class="headerlink" href="#feature-planning-and-release" title="Permalink to this headline">¶</a></h2>
+<p>The GPU Operator release is described in the below table.
++—————————–+—————–+
+|           What              |       Week      |
++=============================+=================+
+| Feature Planning            | Week -2         |
++—————————–+—————–+
+| Feature Freeze              | Day 0           |
++—————————–+—————–+
+| Schedule Finalized          | End of Week 0   |
++—————————–+—————–+
+| Nightly Releases            | Any Time        |
++—————————–+—————–+
+| Code Freeze                 | Day 3 of Week 3 |
++—————————–+—————–+
+| Github Tech Preview Release | Day 1 of Week 4 |
++—————————–+—————–+
+| Nightly Releases            | Any Time        |
++—————————–+—————–+
+| Code Freeze                 | Day 2 of Week 7 |
++—————————–+—————–+
+| NGC Release                 | Day 1 of Week 8 |
++—————————–+—————–+</p>
+<p><strong>Nightly Releases</strong> are published after each successful CI run and only go through an automated QA. <br />
+<strong>Github Releases</strong> require the results of fully qualified QA to be published. <br />
+<strong>NGC Releases</strong> require external approval, security scanning, and a published fully qualified QA.</p>
+<p><strong>Automated QA</strong> is the set of tests that are ran automatically after each Merge Request. <br />
+<strong>Fully Qualified QA</strong> is the test plan we run through and metrics we collect before releasing. <br /></p>
+<p><strong>Feature Freeze</strong> is the day after which no new features will be accepted. <br />
+<strong>Code Freeze</strong> is the day after which no new “Feature” Merge Requests will be accepted. Engineers should focus on bug fixes and QA.</p>
 </div>
-<div class="section" id="what-is-the-nvidia-gpu-operator">
-<h2><a class="toc-backref" href="#id1">What is the NVIDIA GPU Operator?</a><a class="headerlink" href="#what-is-the-nvidia-gpu-operator" title="Permalink to this headline">¶</a></h2>
-<p>The GPU operator manages NVIDIA GPU resources in a Kubernetes cluster.
-It allows to and automates tasks related to bootstrapping GPU nodes.</p>
-<p>GPUs are a special resource in the cluster, and require a few components to be present
-before application workloads can be deployed onto the GPU.
-These components include the NVIDIA drivers (to enable CUDA), Kubernetes device plugin,
-the container runtime and others such as automatic node labelling, monitoring etc.</p>
-<p>This is a technical preview release of the GPU operator. The operator can be deployed using a Helm chart.</p>
+<div class="section" id="release-process-goals">
+<h2>Release Process Goals<a class="headerlink" href="#release-process-goals" title="Permalink to this headline">¶</a></h2>
+<p>As we improve the QA process of the different release, we will be striving towards the following goals:
+* P0: Reduce the cost of “ngc” releases
+* P0: Reduce the cost of “github” releases
+* P1: Merge ngc release in github releases
+* P1: Merge github releases in sprints</p>
 </div>
-<div class="section" id="installation-of-the-gpu-operator">
-<h2><a class="toc-backref" href="#id2">Installation of the GPU Operator</a><a class="headerlink" href="#installation-of-the-gpu-operator" title="Permalink to this headline">¶</a></h2>
-<p>Ensure the following prerequisites are met:</p>
-<ul class="simple">
-<li><p>Nodes must not be pre-configured with NVIDIA components (driver, container runtime, device plugin).</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">i2c_core</span></code> and <code class="docutils literal notranslate"><span class="pre">ipmi_msghandler</span></code> kernel modules need to be loaded</p></li>
-</ul>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ curl -L https://git.io/get_helm.sh <span class="p">|</span> bash
-$ helm version
-version.BuildInfo<span class="o">{</span>Version:<span class="s2">&quot;v3.0.2&quot;</span>, GitCommit:<span class="s2">&quot;19e47ee3283ae98139d98460de796c1be1e3975f&quot;</span>, GitTreeState:<span class="s2">&quot;clean&quot;</span>, GoVersion:<span class="s2">&quot;go1.13.5&quot;</span><span class="o">}</span>
-
-$ helm repo add nvidia https://nvidia.github.io/gpu-operator
-$ helm repo update
-
-$ helm install --devel nvidia/gpu-operator --generate-name
-
-<span class="c1"># To check the gpu-operator version</span>
-$ helm ls
-</pre></div>
-</div>
-</div>
-<div class="section" id="running-a-sample-gpu-application">
-<h2><a class="toc-backref" href="#id3">Running a Sample GPU Application</a><a class="headerlink" href="#running-a-sample-gpu-application" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a tensorflow notebook example</span>
-$ kubectl apply -f https://nvidia.github.io/gpu-operator/notebook-example.yml
-
-<span class="c1"># Grab the token from the pod once it is created</span>
-$ kubectl get pod tf-notebook
-$ kubectl logs tf-notebook
-...
-<span class="o">[</span>I <span class="m">23</span>:20:42.891 NotebookApp<span class="o">]</span> jupyter_tensorboard extension loaded.
-<span class="o">[</span>I <span class="m">23</span>:20:42.926 NotebookApp<span class="o">]</span> JupyterLab alpha preview extension loaded from /opt/conda/lib/python3.6/site-packages/jupyterlab
-JupyterLab v0.24.1
-Known labextensions:
-<span class="o">[</span>I <span class="m">23</span>:20:42.933 NotebookApp<span class="o">]</span> Serving notebooks from <span class="nb">local</span> directory: /home/jovyan
-
-   Copy/paste this URL into your browser when you connect <span class="k">for</span> the first time,
-       to login with a token:
-          http://localhost:8888/?token<span class="o">=</span>MY_TOKEN
-You can now access the notebook on http://localhost:30001/?token<span class="o">=</span>MY_TOKEN
-</pre></div>
-</div>
-</div>
-<div class="section" id="platforms-supported">
-<h2><a class="toc-backref" href="#id4">Platforms Supported</a><a class="headerlink" href="#platforms-supported" title="Permalink to this headline">¶</a></h2>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 29%" />
-<col style="width: 71%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>What</p></th>
-<th class="head"><p>Supported</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>GPUs</p></td>
-<td><p>Pascal+ (including Tesla V100 and T4)</p></td>
-</tr>
-<tr class="row-odd"><td><p>Ubuntu</p></td>
-<td><p>18.04.3 LTS</p></td>
-</tr>
-<tr class="row-even"><td><p>RHCOS</p></td>
-<td><p>rhcos4.1+</p></td>
-</tr>
-<tr class="row-odd"><td><p>Kubernetes</p></td>
-<td><p>v1.13+</p></td>
-</tr>
-<tr class="row-even"><td><p>Openshift</p></td>
-<td><p>v4.1+</p></td>
-</tr>
-<tr class="row-odd"><td><p>Helm</p></td>
-<td><p>v2+</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="known-limitations">
-<h2><a class="toc-backref" href="#id5">Known Limitations</a><a class="headerlink" href="#known-limitations" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>GPU Operator will fail on nodes already setup with NVIDIA components (driver, runtime, device plugin).</p></li>
-<li><p>Removing the GPU Operator will require you to reboot your nodes.</p></li>
-</ul>
-</div>
-<div class="section" id="getting-help">
-<h2><a class="toc-backref" href="#id6">Getting Help</a><a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h2>
-<p>Please open <a class="reference external" href="https://github.com/NVIDIA/gpu-operator/issues/new">an issue on the GitHub project</a> for any questions. Your feedback is appreciated.</p>
+<div class="section" id="release-phases">
+<h2>Release Phases<a class="headerlink" href="#release-phases" title="Permalink to this headline">¶</a></h2>
+<p><strong>Feature Freeze</strong>: All enhancements wishing to be included in the current release must have been agreed on. <br />
+<strong>Planning Freeze</strong>: All enhancements wishing to be included in the current release must have been agreed on. <br />
+<strong>Code Freeze</strong>: All enhancements wishing to be included in the current release must have been agreed on. <br /></p>
+<p>Write a container-wiki page which contains the following information:
+* The Feature List
+* The Test Results
+* The KPI
+* The release notes
+* The schedule and target dates</p>
 </div>
 </div>
 
@@ -396,10 +339,10 @@ You can now access the notebook on http://localhost:30001/?token<span class="o">
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="monitoring.html" class="btn btn-neutral float-right" title="GPU Monitoring" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="testing.html" class="btn btn-neutral float-right" title="Quality Assurance" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../toolkit/deprecated.html" class="btn btn-neutral float-left" title="Deprecated Features, Software and Images" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="monitoring.html" class="btn btn-neutral float-left" title="GPU Monitoring" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
